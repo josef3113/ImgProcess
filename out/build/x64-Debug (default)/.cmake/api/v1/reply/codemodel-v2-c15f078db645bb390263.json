@@ -212,7 +212,7 @@
 				{
 					"directoryIndex" : 4,
 					"id" : "app_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-app_test-Debug-a76d9f680fb2b72726f2.json",
+					"jsonFile" : "target-app_test-Debug-2ae94eefbbbcc8c8a036.json",
 					"name" : "app_test",
 					"projectIndex" : 0
 				},
@@ -247,7 +247,7 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "some_lib::@ab2d765a9c436aabc734",
-					"jsonFile" : "target-some_lib-Debug-b3ddc2fee92368edcf95.json",
+					"jsonFile" : "target-some_lib-Debug-147ddeb7d1422e0fc17c.json",
 					"name" : "some_lib",
 					"projectIndex" : 0
 				}

@@ -199,6 +199,14 @@ build src\some_lib\CMakeFiles\some_lib.dir\src\image_math.cpp.obj: CXX_COMPILER_
   TARGET_COMPILE_PDB = src\some_lib\CMakeFiles\some_lib.dir\some_lib.pdb
   TARGET_PDB = src\some_lib\some_lib.pdb
 
+build src\some_lib\CMakeFiles\some_lib.dir\src\x_on_image.cpp.obj: CXX_COMPILER__some_lib_Debug ..\..\..\src\some_lib\src\x_on_image.cpp || cmake_object_order_depends_target_some_lib_Debug
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
+  INCLUDES = -I..\..\..\src\some_lib\include
+  OBJECT_DIR = src\some_lib\CMakeFiles\some_lib.dir
+  OBJECT_FILE_DIR = src\some_lib\CMakeFiles\some_lib.dir\src
+  TARGET_COMPILE_PDB = src\some_lib\CMakeFiles\some_lib.dir\some_lib.pdb
+  TARGET_PDB = src\some_lib\some_lib.pdb
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target some_lib
@@ -207,7 +215,7 @@ build src\some_lib\CMakeFiles\some_lib.dir\src\image_math.cpp.obj: CXX_COMPILER_
 #############################################
 # Link the static library src\some_lib\some_lib.lib
 
-build src\some_lib\some_lib.lib: CXX_STATIC_LIBRARY_LINKER__some_lib_Debug src\some_lib\CMakeFiles\some_lib.dir\src\time_measure.cpp.obj src\some_lib\CMakeFiles\some_lib.dir\src\image_math.cpp.obj
+build src\some_lib\some_lib.lib: CXX_STATIC_LIBRARY_LINKER__some_lib_Debug src\some_lib\CMakeFiles\some_lib.dir\src\time_measure.cpp.obj src\some_lib\CMakeFiles\some_lib.dir\src\image_math.cpp.obj src\some_lib\CMakeFiles\some_lib.dir\src\x_on_image.cpp.obj
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = src\some_lib\CMakeFiles\some_lib.dir
@@ -434,6 +442,14 @@ build tests\CMakeFiles\app_test.dir\multi_thread_processor_test.cpp.obj: CXX_COM
   TARGET_COMPILE_PDB = tests\CMakeFiles\app_test.dir\
   TARGET_PDB = tests\app_test.pdb
 
+build tests\CMakeFiles\app_test.dir\x_on_image_test.cpp.obj: CXX_COMPILER__app_test_Debug ..\..\..\tests\x_on_image_test.cpp || cmake_object_order_depends_target_app_test_Debug
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
+  INCLUDES = -I..\..\..\src\some_lib\include -I_deps\googletest-src\googletest\include -I_deps\googletest-src\googletest
+  OBJECT_DIR = tests\CMakeFiles\app_test.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\app_test.dir
+  TARGET_COMPILE_PDB = tests\CMakeFiles\app_test.dir\
+  TARGET_PDB = tests\app_test.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target app_test
@@ -442,7 +458,7 @@ build tests\CMakeFiles\app_test.dir\multi_thread_processor_test.cpp.obj: CXX_COM
 #############################################
 # Link the executable tests\app_test.exe
 
-build tests\app_test.exe: CXX_EXECUTABLE_LINKER__app_test_Debug tests\CMakeFiles\app_test.dir\some_lib_test.cpp.obj tests\CMakeFiles\app_test.dir\time_measure_test.cpp.obj tests\CMakeFiles\app_test.dir\image_math_test.cpp.obj tests\CMakeFiles\app_test.dir\multi_thread_processor_test.cpp.obj | src\some_lib\some_lib.lib lib\gtest_maind.lib lib\gtestd.lib || lib\gtest_maind.lib lib\gtestd.lib src\some_lib\some_lib.lib
+build tests\app_test.exe: CXX_EXECUTABLE_LINKER__app_test_Debug tests\CMakeFiles\app_test.dir\some_lib_test.cpp.obj tests\CMakeFiles\app_test.dir\time_measure_test.cpp.obj tests\CMakeFiles\app_test.dir\image_math_test.cpp.obj tests\CMakeFiles\app_test.dir\multi_thread_processor_test.cpp.obj tests\CMakeFiles\app_test.dir\x_on_image_test.cpp.obj | src\some_lib\some_lib.lib lib\gtest_maind.lib lib\gtestd.lib || lib\gtest_maind.lib lib\gtestd.lib src\some_lib\some_lib.lib
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = src\some_lib\some_lib.lib  lib\gtest_maind.lib  lib\gtestd.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

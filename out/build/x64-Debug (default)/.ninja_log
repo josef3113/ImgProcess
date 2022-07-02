@@ -37,3 +37,8 @@
 1742	2080	678464321	tests/app_test.exe	56010937a7db4e2e
 4	1773	678464438	tests/CMakeFiles/app_test.dir/multi_thread_processor_test.cpp.obj	e2fe1b91283e69fc
 1773	2137	678464438	tests/app_test.exe	56010937a7db4e2e
+5	1066	678464812	src/some_lib/CMakeFiles/some_lib.dir/src/x_on_image.cpp.obj	6c418b4d42e491f8
+1066	1140	678464812	src/some_lib/some_lib.lib	47e24f1f5e144c0e
+1141	1451	678464812	tests/app_test.exe	56010937a7db4e2e
+4	1908	678465083	tests/CMakeFiles/app_test.dir/x_on_image_test.cpp.obj	698fd174a972af90
+1909	2483	678465084	tests/app_test.exe	e85920a30d3eda54
