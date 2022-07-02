@@ -14,7 +14,8 @@ some_lib_test.cpp
 time_measure_test.cpp 
 image_math_test.cpp 
 multi_thread_processor_test.cpp 
-x_on_image_test.cpp)
+x_on_image_test.cpp 
+images_processor_test.cpp)
 
 
 target_link_libraries(app_test
