@@ -11,7 +11,8 @@ target_link_libraries(GTest::GTest INTERFACE gtest_main)
 
 add_executable(app_test 
 some_lib_test.cpp
-time_measure_test.cpp)
+time_measure_test.cpp 
+image_math_test.cpp)
 
 
 target_link_libraries(app_test
