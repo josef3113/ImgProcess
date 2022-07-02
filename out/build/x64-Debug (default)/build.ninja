@@ -174,6 +174,41 @@ build src\list_install_components: phony
 # C:/Users/josef/source/repos/ImgProcess/src/CMakeLists.txt
 # =============================================================================
 
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target some_lib
+
+
+#############################################
+# Order-only phony target for some_lib
+
+build cmake_object_order_depends_target_some_lib_Debug: phony || src\some_lib\CMakeFiles\some_lib.dir
+
+build src\some_lib\CMakeFiles\some_lib.dir\src\time_measure.cpp.obj: CXX_COMPILER__some_lib_Debug ..\..\..\src\some_lib\src\time_measure.cpp || cmake_object_order_depends_target_some_lib_Debug
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
+  INCLUDES = -I..\..\..\src\some_lib\include
+  OBJECT_DIR = src\some_lib\CMakeFiles\some_lib.dir
+  OBJECT_FILE_DIR = src\some_lib\CMakeFiles\some_lib.dir\src
+  TARGET_COMPILE_PDB = src\some_lib\CMakeFiles\some_lib.dir\some_lib.pdb
+  TARGET_PDB = src\some_lib\some_lib.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target some_lib
+
+
+#############################################
+# Link the static library src\some_lib\some_lib.lib
+
+build src\some_lib\some_lib.lib: CXX_STATIC_LIBRARY_LINKER__some_lib_Debug src\some_lib\CMakeFiles\some_lib.dir\src\time_measure.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = src\some_lib\CMakeFiles\some_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = src\some_lib\CMakeFiles\some_lib.dir\some_lib.pdb
+  TARGET_FILE = src\some_lib\some_lib.lib
+  TARGET_PDB = src\some_lib\some_lib.pdb
+
 
 #############################################
 # Utility command for rebuild_cache
@@ -357,11 +392,19 @@ build src\app\list_install_components: phony
 #############################################
 # Order-only phony target for app_test
 
-build cmake_object_order_depends_target_app_test_Debug: phony || cmake_object_order_depends_target_gtest_Debug cmake_object_order_depends_target_gtest_main_Debug
+build cmake_object_order_depends_target_app_test_Debug: phony || cmake_object_order_depends_target_gtest_Debug cmake_object_order_depends_target_gtest_main_Debug cmake_object_order_depends_target_some_lib_Debug
 
 build tests\CMakeFiles\app_test.dir\some_lib_test.cpp.obj: CXX_COMPILER__app_test_Debug ..\..\..\tests\some_lib_test.cpp || cmake_object_order_depends_target_app_test_Debug
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
-  INCLUDES = -I_deps\googletest-src\googletest\include -I_deps\googletest-src\googletest
+  INCLUDES = -I..\..\..\src\some_lib\include -I_deps\googletest-src\googletest\include -I_deps\googletest-src\googletest
+  OBJECT_DIR = tests\CMakeFiles\app_test.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\app_test.dir
+  TARGET_COMPILE_PDB = tests\CMakeFiles\app_test.dir\
+  TARGET_PDB = tests\app_test.pdb
+
+build tests\CMakeFiles\app_test.dir\time_measure_test.cpp.obj: CXX_COMPILER__app_test_Debug ..\..\..\tests\time_measure_test.cpp || cmake_object_order_depends_target_app_test_Debug
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
+  INCLUDES = -I..\..\..\src\some_lib\include -I_deps\googletest-src\googletest\include -I_deps\googletest-src\googletest
   OBJECT_DIR = tests\CMakeFiles\app_test.dir
   OBJECT_FILE_DIR = tests\CMakeFiles\app_test.dir
   TARGET_COMPILE_PDB = tests\CMakeFiles\app_test.dir\
@@ -375,10 +418,10 @@ build tests\CMakeFiles\app_test.dir\some_lib_test.cpp.obj: CXX_COMPILER__app_tes
 #############################################
 # Link the executable tests\app_test.exe
 
-build tests\app_test.exe: CXX_EXECUTABLE_LINKER__app_test_Debug tests\CMakeFiles\app_test.dir\some_lib_test.cpp.obj | lib\gtest_maind.lib lib\gtestd.lib || lib\gtest_maind.lib lib\gtestd.lib
+build tests\app_test.exe: CXX_EXECUTABLE_LINKER__app_test_Debug tests\CMakeFiles\app_test.dir\some_lib_test.cpp.obj tests\CMakeFiles\app_test.dir\time_measure_test.cpp.obj | src\some_lib\some_lib.lib lib\gtest_maind.lib lib\gtestd.lib || lib\gtest_maind.lib lib\gtestd.lib src\some_lib\some_lib.lib
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = lib\gtest_maind.lib  lib\gtestd.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = src\some_lib\some_lib.lib  lib\gtest_maind.lib  lib\gtestd.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = tests\CMakeFiles\app_test.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -853,6 +896,10 @@ build gtest_maind.lib: phony lib\gtest_maind.lib
 
 build gtestd.lib: phony lib\gtestd.lib
 
+build some_lib: phony src\some_lib\some_lib.lib
+
+build some_lib.lib: phony src\some_lib\some_lib.lib
+
 # =============================================================================
 # Folder targets.
 
@@ -903,7 +950,7 @@ build src\app\all: phony src\app\app.exe
 #############################################
 # Folder: C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug (default)/src/some_lib
 
-build src\some_lib\all: phony
+build src\some_lib\all: phony src\some_lib\some_lib.lib
 
 # =============================================================================
 
