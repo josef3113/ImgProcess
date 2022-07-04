@@ -2,6 +2,7 @@
 #include <mutex>
 #include <iostream>
 #include "image_math.h"
+#include "boost\circular_buffer.hpp"
 
 
 
@@ -18,5 +19,7 @@ namespace some_lib {
 		std::mutex increment_id_mtx_;
 
 		static int last_save_img_;
+
+		boost::circular_buffer<int> buff_;
 	};
 }

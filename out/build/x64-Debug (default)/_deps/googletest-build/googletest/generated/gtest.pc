@@ -1,5 +1,5 @@
-libdir=C:/Users/josef/Source/Repos/ImgProcess/out/install/x64-Debug (default)/lib
-includedir=C:/Users/josef/Source/Repos/ImgProcess/out/install/x64-Debug (default)/include
+libdir=C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug (default)/lib
+includedir=C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug (default)/include
 
 Name: gtest
 Description: GoogleTest (without main() function)

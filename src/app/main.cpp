@@ -39,4 +39,7 @@ int main() {
 		std::cout << "num of worker " << num_worker
 			<< "take " << time_mesure.count() << "[nano sec]" << std::endl;
 	}
+
+	int a = 0;
+	std::cin >> a;
 }
