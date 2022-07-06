@@ -1,5 +1,5 @@
-libdir=C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug/lib
-includedir=C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug/include
+libdir=C:/Users/josef/Source/Repos/josef3113/ImgProcess/out/install/x64-Debug/lib
+includedir=C:/Users/josef/Source/Repos/josef3113/ImgProcess/out/install/x64-Debug/include
 
 Name: gmock
 Description: GoogleMock (without main() function)

@@ -1,11 +1,36 @@
+#include <opencv2/core.hpp> // check why boost fail without this.
 #include <iostream>
+#include "boost/process.hpp"
 #include "time_measure.h"
 #include "images_processor.h"
-#include <vector>
 
-int main() {
 
-	utilities::TimeMeasur timer;
+
+int main()
+{
+    // ------------------- multi process code
+    // todo wrap this code on class MultiProcessImgsProcessor.
+	namespace bp = boost::process;
+
+    int num_of_processes = 10;
+    std::vector<bp::child> processes;
+
+    for (int i = 0; i < num_of_processes; i++) {
+        processes.push_back(bp::child("img_process.exe"));
+    }
+
+    for (auto& process : processes) {
+        if (process.joinable()) {
+            std::cout << "process.joinable()" << std::endl;
+
+            process.join();
+        }
+    }
+    // end of multi process.
+
+
+	// --------------- multi thread code ------
+    utilities::TimeMeasur timer;
 
 	std::vector<utilities::TimeMeasur::TimeProcess> times_process;
 
@@ -39,6 +64,7 @@ int main() {
 		std::cout << "num of worker " << num_worker
 			<< "take " << time_mesure.count() << "[nano sec]" << std::endl;
 	}
+	// end multi thread code.
 
 	int a = 0;
 	std::cin >> a;

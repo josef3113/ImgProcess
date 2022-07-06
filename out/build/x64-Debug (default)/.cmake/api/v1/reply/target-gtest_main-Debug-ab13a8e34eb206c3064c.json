@@ -12,7 +12,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lib/gmock_maind.lib"
+			"path" : "lib/gtest_maind.lib"
 		}
 	],
 	"backtrace" : 3,
@@ -25,12 +25,13 @@
 			"cxx_library",
 			"install",
 			"install_project",
+			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
 		[
-			"out/build/x64-Debug/_deps/googletest-src/googletest/cmake/internal_utils.cmake",
-			"out/build/x64-Debug/_deps/googletest-src/googlemock/CMakeLists.txt"
+			"out/build/x64-Debug (default)/_deps/googletest-src/googletest/cmake/internal_utils.cmake",
+			"out/build/x64-Debug (default)/_deps/googletest-src/googletest/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -40,7 +41,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 95,
+				"line" : 133,
 				"parent" : 0
 			},
 			{
@@ -58,7 +59,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 123,
+				"line" : 151,
 				"parent" : 0
 			},
 			{
@@ -70,7 +71,13 @@
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 79,
+				"line" : 146,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 121,
 				"parent" : 0
 			}
 		]
@@ -93,32 +100,31 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 6,
-					"path" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googlemock/include"
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps/googletest-src/googletest/include"
 				},
 				{
-					"backtrace" : 6,
-					"path" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googlemock"
-				},
-				{
-					"backtrace" : 6,
-					"path" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googletest/include"
-				},
-				{
-					"backtrace" : 6,
-					"path" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googletest"
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps/googletest-src/googletest"
 				}
 			],
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2
+				0
 			]
 		}
 	],
-	"id" : "gmock_main::@0f7bb11d64f3678238c7",
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 6,
+			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
+		}
+	],
+	"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f",
 	"install" : 
 	{
 		"destinations" : 
@@ -130,15 +136,15 @@
 		],
 		"prefix" : 
 		{
-			"path" : "C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug"
+			"path" : "C:/Users/josef/Source/Repos/josef3113/ImgProcess/out/install/x64-Debug (default)"
 		}
 	},
-	"name" : "gmock_main",
-	"nameOnDisk" : "gmock_maind.lib",
+	"name" : "gtest_main",
+	"nameOnDisk" : "gtest_maind.lib",
 	"paths" : 
 	{
-		"build" : "_deps/googletest-build/googlemock",
-		"source" : "out/build/x64-Debug/_deps/googletest-src/googlemock"
+		"build" : "_deps/googletest-build/googletest",
+		"source" : "out/build/x64-Debug (default)/_deps/googletest-src/googletest"
 	},
 	"sourceGroups" : 
 	[
@@ -146,9 +152,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2
+				0
 			]
 		}
 	],
@@ -157,19 +161,7 @@
 		{
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
-			"path" : "out/build/x64-Debug/_deps/googletest-src/googletest/src/gtest-all.cc",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 3,
-			"compileGroupIndex" : 0,
-			"path" : "out/build/x64-Debug/_deps/googletest-src/googlemock/src/gmock-all.cc",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 3,
-			"compileGroupIndex" : 0,
-			"path" : "out/build/x64-Debug/_deps/googletest-src/googlemock/src/gmock_main.cc",
+			"path" : "out/build/x64-Debug (default)/_deps/googletest-src/googletest/src/gtest_main.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

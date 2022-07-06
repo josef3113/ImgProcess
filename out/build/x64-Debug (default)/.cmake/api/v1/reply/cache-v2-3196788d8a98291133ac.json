@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)"
 		},
 		{
 			"name" : "App_SOURCE_DIR",
@@ -23,7 +23,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/josef/source/repos/ImgProcess"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess"
 		},
 		{
 			"name" : "BUILD_GMOCK",
@@ -36,38 +36,6 @@
 			],
 			"type" : "BOOL",
 			"value" : "ON"
-		},
-		{
-			"name" : "Boost_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Boost."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Boost_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Boost_INCLUDE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a file."
-				}
-			],
-			"type" : "PATH",
-			"value" : "C:/boost_1_66_0/boost_1_66_0"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -91,7 +59,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug"
+			"value" : "c:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -579,7 +547,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/josef/source/repos/ImgProcess"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -783,7 +751,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug"
+			"value" : "C:/Users/josef/Source/Repos/josef3113/ImgProcess/out/install/x64-Debug (default)"
 		},
 		{
 			"name" : "CMAKE_INSTALL_RUNSTATEDIR",
@@ -1431,7 +1399,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps"
 		},
 		{
 			"name" : "FETCHCONTENT_FULLY_DISCONNECTED",
@@ -1494,30 +1462,6 @@
 			"value" : "OFF"
 		},
 		{
-			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Boost",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Details about finding Boost"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "[C:/boost_1_66_0/boost_1_66_0][c ][v1.66.0(1.36.0)]"
-		},
-		{
-			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_OpenCV",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Details about finding OpenCV"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "[C:/opencv/build][v4.2.0()]"
-		},
-		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Python",
 			"properties" : 
 			[
@@ -1554,78 +1498,6 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "OpenCV_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for OpenCV."
-				}
-			],
-			"type" : "PATH",
-			"value" : "OpenCV_DIR-NOTFOUND"
-		},
-		{
-			"name" : "_BOOST_ROOT_LAST",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Last used BOOST_ROOT value."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "C://boost_1_66_0//boost_1_66_0"
-		},
-		{
-			"name" : "_Boost_COMPONENTS_SEARCHED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Components requested for this build tree."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : ""
-		},
-		{
-			"name" : "_Boost_INCLUDE_DIR_LAST",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Last used Boost_INCLUDE_DIR value."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "C:/boost_1_66_0/boost_1_66_0"
-		},
-		{
-			"name" : "_Boost_NAMESPACE_LAST",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Last used Boost_NAMESPACE value."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "boost"
-		},
-		{
-			"name" : "_Boost_USE_MULTITHREADED_LAST",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Last used Boost_USE_MULTITHREADED value."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
-		},
-		{
 			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",
 			"properties" : 
 			[
@@ -1635,7 +1507,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug"
+			"value" : "C:/Users/josef/Source/Repos/josef3113/ImgProcess/out/install/x64-Debug (default)"
 		},
 		{
 			"name" : "_Python_EXECUTABLE",
@@ -1695,7 +1567,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-build/googletest/generated"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps/googletest-build/googletest/generated"
 		},
 		{
 			"name" : "gmock_BINARY_DIR",
@@ -1707,7 +1579,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-build/googlemock"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps/googletest-build/googlemock"
 		},
 		{
 			"name" : "gmock_SOURCE_DIR",
@@ -1719,7 +1591,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googlemock"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps/googletest-src/googlemock"
 		},
 		{
 			"name" : "gmock_build_tests",
@@ -1747,7 +1619,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-build"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps/googletest-build"
 		},
 		{
 			"name" : "googletest-distribution_SOURCE_DIR",
@@ -1759,7 +1631,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps/googletest-src"
 		},
 		{
 			"name" : "gtest_BINARY_DIR",
@@ -1771,7 +1643,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-build/googletest"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps/googletest-build/googletest"
 		},
 		{
 			"name" : "gtest_SOURCE_DIR",
@@ -1783,7 +1655,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googletest"
+			"value" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)/_deps/googletest-src/googletest"
 		},
 		{
 			"name" : "gtest_build_samples",

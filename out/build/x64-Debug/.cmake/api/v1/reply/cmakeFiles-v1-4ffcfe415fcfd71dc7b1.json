@@ -145,6 +145,9 @@
 			"path" : "src/app/CMakeLists.txt"
 		},
 		{
+			"path" : "src/img_process/CMakeLists.txt"
+		},
+		{
 			"path" : "tests/CMakeLists.txt"
 		},
 		{
@@ -336,8 +339,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug",
-		"source" : "C:/Users/josef/source/repos/ImgProcess"
+		"build" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug",
+		"source" : "C:/Users/josef/source/repos/josef3113/ImgProcess"
 	},
 	"version" : 
 	{

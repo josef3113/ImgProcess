@@ -12,7 +12,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lib/gmockd.lib"
+			"path" : "lib/gtestd.lib"
 		}
 	],
 	"backtrace" : 3,
@@ -30,7 +30,7 @@
 		"files" : 
 		[
 			"out/build/x64-Debug/_deps/googletest-src/googletest/cmake/internal_utils.cmake",
-			"out/build/x64-Debug/_deps/googletest-src/googlemock/CMakeLists.txt"
+			"out/build/x64-Debug/_deps/googletest-src/googletest/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -40,7 +40,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 90,
+				"line" : 131,
 				"parent" : 0
 			},
 			{
@@ -58,7 +58,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 123,
+				"line" : 151,
 				"parent" : 0
 			},
 			{
@@ -70,7 +70,7 @@
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 79,
+				"line" : 121,
 				"parent" : 0
 			}
 		]
@@ -94,30 +94,21 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googlemock/include"
+					"path" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googletest/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googlemock"
-				},
-				{
-					"backtrace" : 6,
-					"path" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googletest/include"
-				},
-				{
-					"backtrace" : 6,
-					"path" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googletest"
+					"path" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug/_deps/googletest-src/googletest"
 				}
 			],
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
-	"id" : "gmock::@0f7bb11d64f3678238c7",
+	"id" : "gtest::@1ea2dfc0605fe3ab2a3f",
 	"install" : 
 	{
 		"destinations" : 
@@ -129,15 +120,15 @@
 		],
 		"prefix" : 
 		{
-			"path" : "C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug"
+			"path" : "C:/Users/josef/Source/Repos/josef3113/ImgProcess/out/install/x64-Debug"
 		}
 	},
-	"name" : "gmock",
-	"nameOnDisk" : "gmockd.lib",
+	"name" : "gtest",
+	"nameOnDisk" : "gtestd.lib",
 	"paths" : 
 	{
-		"build" : "_deps/googletest-build/googlemock",
-		"source" : "out/build/x64-Debug/_deps/googletest-src/googlemock"
+		"build" : "_deps/googletest-build/googletest",
+		"source" : "out/build/x64-Debug/_deps/googletest-src/googletest"
 	},
 	"sourceGroups" : 
 	[
@@ -145,8 +136,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
@@ -156,12 +146,6 @@
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
 			"path" : "out/build/x64-Debug/_deps/googletest-src/googletest/src/gtest-all.cc",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 3,
-			"compileGroupIndex" : 0,
-			"path" : "out/build/x64-Debug/_deps/googletest-src/googlemock/src/gmock-all.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

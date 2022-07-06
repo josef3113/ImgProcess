@@ -94,7 +94,7 @@
 					},
 					"parentIndex" : 4,
 					"projectIndex" : 1,
-					"source" : "out/build/x64-Debug/_deps/googletest-src"
+					"source" : "out/build/x64-Debug (default)/_deps/googletest-src"
 				},
 				{
 					"build" : "_deps/googletest-build/googlemock",
@@ -109,7 +109,7 @@
 					},
 					"parentIndex" : 5,
 					"projectIndex" : 2,
-					"source" : "out/build/x64-Debug/_deps/googletest-src/googlemock",
+					"source" : "out/build/x64-Debug (default)/_deps/googletest-src/googlemock",
 					"targetIndexes" : 
 					[
 						2,
@@ -125,7 +125,7 @@
 					},
 					"parentIndex" : 6,
 					"projectIndex" : 3,
-					"source" : "out/build/x64-Debug/_deps/googletest-src/googletest",
+					"source" : "out/build/x64-Debug (default)/_deps/googletest-src/googletest",
 					"targetIndexes" : 
 					[
 						4,
@@ -205,49 +205,49 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "app::@ff93792cf40911dae1b8",
-					"jsonFile" : "target-app-Debug-d82e7572a83c06297e21.json",
+					"jsonFile" : "target-app-Debug-4c6440ea228d7c3e3a0c.json",
 					"name" : "app",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "app_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-app_test-Debug-61eec22659a57e253c78.json",
+					"jsonFile" : "target-app_test-Debug-7d32ec35867014522bbe.json",
 					"name" : "app_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 6,
 					"id" : "gmock::@0f7bb11d64f3678238c7",
-					"jsonFile" : "target-gmock-Debug-2009940bb6ef71fa41eb.json",
+					"jsonFile" : "target-gmock-Debug-72c488ab002c947cdd19.json",
 					"name" : "gmock",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 6,
 					"id" : "gmock_main::@0f7bb11d64f3678238c7",
-					"jsonFile" : "target-gmock_main-Debug-1eabbabf3a33f2990a0c.json",
+					"jsonFile" : "target-gmock_main-Debug-ac917da2bea5b1380265.json",
 					"name" : "gmock_main",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 7,
 					"id" : "gtest::@1ea2dfc0605fe3ab2a3f",
-					"jsonFile" : "target-gtest-Debug-189de3907481fe0be0f0.json",
+					"jsonFile" : "target-gtest-Debug-26bfa8a4aa058873a9a9.json",
 					"name" : "gtest",
 					"projectIndex" : 3
 				},
 				{
 					"directoryIndex" : 7,
 					"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f",
-					"jsonFile" : "target-gtest_main-Debug-cceb8ed90fca7914778b.json",
+					"jsonFile" : "target-gtest_main-Debug-ab13a8e34eb206c3064c.json",
 					"name" : "gtest_main",
 					"projectIndex" : 3
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "some_lib::@ab2d765a9c436aabc734",
-					"jsonFile" : "target-some_lib-Debug-650c1f68413196826267.json",
+					"jsonFile" : "target-some_lib-Debug-ec523484b493ec3a9c77.json",
 					"name" : "some_lib",
 					"projectIndex" : 0
 				}
@@ -257,8 +257,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/josef/source/repos/ImgProcess/out/build/x64-Debug",
-		"source" : "C:/Users/josef/source/repos/ImgProcess"
+		"build" : "C:/Users/josef/source/repos/josef3113/ImgProcess/out/build/x64-Debug (default)",
+		"source" : "C:/Users/josef/source/repos/josef3113/ImgProcess"
 	},
 	"version" : 
 	{
