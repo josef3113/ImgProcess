@@ -1,7 +1,6 @@
 #pragma once 
 #include <opencv2/core.hpp>
 #include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
 
 
 namespace img_process {
@@ -25,6 +24,6 @@ namespace img_process {
         };
 
         static cv::Mat Convert(const cv::Mat& origin_img,
-            ConvertImgBGRtoBW::BGRMultipliers multipliers);
+                               ConvertImgBGRtoBW::BGRMultipliers multipliers);
     };
 }

@@ -1,6 +1,5 @@
 #include "images_processor.h"
 #include "multi_thread_processor.h"
-#include <iostream>
 #include "black_white_img.h"
 
 

@@ -1,9 +1,8 @@
-#include <opencv2/core.hpp> // check why boost fail without this.
 #include <iostream>
-#include "boost/process.hpp"
 #include "time_measure.h"
 #include "images_processor.h"
-
+#include <vector>
+#include <boost/filesystem.hpp>
 
 
 int main()
