@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/josef/source/repos/josef3113/ImgProcess/src/img_process
+# Install script for directory: C:/Users/josef/Desktop/greeneye/clone/ImgProcess/src/img_process
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/josef/Source/Repos/josef3113/ImgProcess/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/josef/Desktop/greeneye/clone/ImgProcess/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -43,7 +43,8 @@ int main()
 		some_lib::ImagesProcessor img_processor{ worker_num };
 
 		int image_count = 10;
-		img_processor.ProcessImages(image_count, "empty");
+		some_lib::ImagesProcessor::Folders folders;
+		img_processor.ProcessImages(image_count, folders);
 
 		timer.Stop();
 

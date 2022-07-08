@@ -6,17 +6,23 @@
 namespace some_lib {
 
 	class ImagesProcessor {
-
 	public:
+
+		struct Folders {
+			std::string input_folder_name_{"empty path"};
+			std::string output_folder_name_{ "empty path" };
+		};
+
+
 		ImagesProcessor(int num_of_threads);
 
-		void ProcessImages(int num_of_images, std::string folder_path);
+		void ProcessImages(int num_of_images, Folders folders_path);
 
 	private:
 
 		int GetNextImgIdToProcess();
 
-		void ProcessImage(std::string folder_path);
+		void ProcessImage(Folders folders_path);
 
 		std::mutex mtx_;
 

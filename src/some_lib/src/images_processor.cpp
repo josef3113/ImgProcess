@@ -1,7 +1,7 @@
 #include "images_processor.h"
 #include "multi_thread_processor.h"
 #include <iostream>
-#include "x_on_image.h"
+#include "bw_image.h"
 
 
 
@@ -15,15 +15,15 @@ namespace some_lib {
 
 
 
-	void ImagesProcessor::ProcessImages(int num_of_images, std::string folder_path) {
+	void ImagesProcessor::ProcessImages(int num_of_images, Folders folders_path) {
 
 		num_of_images_ = num_of_images;
 
-		MultiThreadProcessor<std::string> processor;
+		MultiThreadProcessor<Folders> processor;
 
-		auto mission = [this, folder_path](std::string) { ProcessImage(folder_path); };
+		auto mission = [this, folders_path](Folders) { ProcessImage(folders_path); };
 
-		MultiThreadProcessor<std::string>::Task task{ folder_path, mission  };
+		MultiThreadProcessor<Folders>::Task task{ folders_path, mission  };
 
 		processor.Process(num_of_threads_, task);
 	}
@@ -45,7 +45,7 @@ namespace some_lib {
 
 
 
-	void ImagesProcessor::ProcessImage(std::string folder_path) {
+	void ImagesProcessor::ProcessImage(Folders folders_path) {
 
 		std::cout << "ProcessImage " << std::endl;
 		int image_id = GetNextImgIdToProcess();
@@ -53,7 +53,9 @@ namespace some_lib {
 		while ((image_id != -1) && (image_id < num_of_images_)) {
 
 			// read and do somting on image num image_id
-			XOnImage{ folder_path, image_id };
+			BwImage{ folders_path.input_folder_name_,
+					folders_path.output_folder_name_ ,
+					std::to_string(image_id )};
 
 			image_id = GetNextImgIdToProcess();
 		}
