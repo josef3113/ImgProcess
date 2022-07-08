@@ -1,7 +1,7 @@
-add_executable(img_process main.cpp)
+add_executable(img_process_exe main.cpp)
 
 target_link_libraries(
-	img_process
+	img_process_exe
 	PUBLIC
-	some_lib
+	img_process_lib
 )

@@ -40,10 +40,10 @@ int main()
         timer.Start();
 
         int worker_num = i;
-        some_lib::ImagesProcessor img_processor{ worker_num };
+        img_process::ImagesProcessor img_processor{ worker_num };
 
         int image_count = 10;
-        some_lib::ImagesProcessor::Folders folders;
+        img_process::ImagesProcessor::Folders folders;
         folders.input_folder_name_ = "data";
 
         boost::filesystem::create_directory("output_app");

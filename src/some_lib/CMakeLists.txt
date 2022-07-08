@@ -1,4 +1,6 @@
-add_library(some_lib 
+set(NAME_LIB img_process_lib)
+
+add_library(${NAME_LIB}
 "src/time_measure.cpp" 
 "src/convert_img.cpp" 
 "src/black_white_img.cpp"
@@ -22,8 +24,8 @@ if(Boost_FOUND)
 	message("boost found Boost 1.77.0 COMPONENTS filesystem")
 endif()
 
-target_include_directories(some_lib PUBLIC include ${Boost_INCLUDE_DIRS})
-target_link_libraries(some_lib PUBLIC Boost::filesystem )
+target_include_directories(${NAME_LIB} PUBLIC include ${Boost_INCLUDE_DIRS})
+target_link_libraries(${NAME_LIB} PUBLIC Boost::filesystem )
 #########################################################
 
 
@@ -33,6 +35,6 @@ set(OpenCV_DIR "C://opencv//build")
 
 find_package(OpenCV REQUIRED )
 
-target_include_directories(some_lib PUBLIC ${OpenCV_INCLUDE_DIRS} )
-target_link_libraries(some_lib PUBLIC ${OpenCV_LIBS} )
+target_include_directories(${NAME_LIB} PUBLIC ${OpenCV_INCLUDE_DIRS} )
+target_link_libraries(${NAME_LIB} PUBLIC ${OpenCV_LIBS} )
 ##########################################################

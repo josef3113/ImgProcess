@@ -4,7 +4,7 @@
 #include <opencv2/highgui.hpp>
 
 
-namespace some_lib {
+namespace img_process {
 
     class ConvertImgBGRtoBW {
     public:

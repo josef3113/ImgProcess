@@ -3,7 +3,7 @@
 #include <mutex>
 
 
-namespace some_lib {
+namespace img_process {
 
     class ImagesProcessor {
     public:

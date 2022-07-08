@@ -4,7 +4,7 @@
 
 
 
-namespace some_lib {
+namespace img_process {
 
     template <typename T>
     class MultiThreadProcessor {

@@ -10,9 +10,7 @@ add_library(GTest::GTest INTERFACE IMPORTED)
 target_link_libraries(GTest::GTest INTERFACE gtest_main)
 
 add_executable(app_test 
-
 time_measure_test.cpp 
- 
 multi_thread_processor_test.cpp 
 black_white_img_test.cpp 
 images_processor_test.cpp)
@@ -21,6 +19,6 @@ images_processor_test.cpp)
 target_link_libraries(app_test
  PRIVATE
   GTest::GTest
-  some_lib)
+  img_process_lib)
 
 add_test(app_gtests app_test)

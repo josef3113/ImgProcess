@@ -17,7 +17,7 @@ int main()
     // 3 - save result 
 
     // this function - will be execute 2,3.
-    some_lib::BlackWhiteImg img1("empty", "empty", std::to_string(1));
+    img_process::BlackWhiteImg img1("empty", "empty", std::to_string(1));
 
 
     // current show img.

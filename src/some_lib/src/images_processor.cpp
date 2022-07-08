@@ -5,7 +5,7 @@
 
 
 
-namespace some_lib {
+namespace img_process {
 
     ImagesProcessor::ImagesProcessor(int num_of_threads)
         :num_of_threads_{ num_of_threads }

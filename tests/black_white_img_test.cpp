@@ -13,11 +13,11 @@ TEST(ConvertBGRtoBWImageTest, basic_test)
     float g_multiple = 0.587;
     float r_multiple = 0.114;
 
-    some_lib::ConvertImgBGRtoBW::BGRMultipliers multipliers{ b_multiple,
-                                                             g_multiple,
-                                                             r_multiple };
+    img_process::ConvertImgBGRtoBW::BGRMultipliers multipliers{ b_multiple,
+                                                                g_multiple,
+                                                                r_multiple };
 
-    auto res_img = some_lib::ConvertImgBGRtoBW::Convert(img, multipliers);
+    auto res_img = img_process::ConvertImgBGRtoBW::Convert(img, multipliers);
 
     boost::filesystem::create_directory("output test");
 
@@ -34,8 +34,8 @@ TEST(BwImageTest, basic_test)
 {
     int img_id = 1;
 
-    EXPECT_NO_THROW(some_lib::BlackWhiteImg("data",
-                                            "output test",
-                                            std::to_string(img_id) + ".JPG"));
+    EXPECT_NO_THROW(img_process::BlackWhiteImg("data",
+                                                "output test",
+                                                std::to_string(img_id) + ".JPG"));
 
 }

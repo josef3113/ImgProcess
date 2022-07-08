@@ -3,7 +3,7 @@
 #include <boost/filesystem.hpp>
 
 
-namespace some_lib {
+namespace img_process {
     int BlackWhiteImg::last_save_img_ = 0;
 
 

@@ -5,7 +5,7 @@
 
 TEST(MultiThreadProcessorTest, basic_test)
 {
-    some_lib::MultiThreadProcessor <std::string> p;
+    img_process::MultiThreadProcessor <std::string> p;
 
     int num_threads = 2;
 
@@ -13,7 +13,7 @@ TEST(MultiThreadProcessorTest, basic_test)
 
     auto mission = [msg_to_print](std::string) { std::cout << msg_to_print << std::endl; };
 
-    some_lib::MultiThreadProcessor<std::string>::Task task{ msg_to_print, mission };
+    img_process::MultiThreadProcessor<std::string>::Task task{ msg_to_print, mission };
 
     EXPECT_NO_THROW(p.Process(num_threads, task));
 }
