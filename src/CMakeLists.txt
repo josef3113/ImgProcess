@@ -1,2 +1,2 @@
-add_subdirectory(some_lib)
+add_subdirectory(img_process_lib)
 add_subdirectory(app)

@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/josef/Desktop/greeneye/clone/ImgProcess/out/build/x64-Debug/src/img_process/cmake_install.cmake")
+  include("C:/Users/josef/Desktop/greeneye/clone/ImgProcess/out/build/x64-Debug/src/img_process_exe/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

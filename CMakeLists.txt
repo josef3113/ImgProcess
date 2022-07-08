@@ -10,7 +10,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 
 add_subdirectory(src)
-add_subdirectory(src/img_process)
+add_subdirectory(src/img_process_exe)
 add_subdirectory(tests)
 
 
