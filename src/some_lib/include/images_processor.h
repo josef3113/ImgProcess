@@ -3,27 +3,33 @@
 #include <mutex>
 
 
-namespace some_lib {
+namespace img_process {
 
-	class ImagesProcessor {
+    class ImagesProcessor {
+    public:
 
-	public:
-		ImagesProcessor(int num_of_threads);
+        struct Folders {
+            std::string input_folder_name_{ "empty path" };
+            std::string output_folder_name_{ "empty path" };
+        };
 
-		void ProcessImages(int num_of_images, std::string folder_path);
 
-	private:
+        ImagesProcessor(int num_of_threads);
 
-		int GetNextImgIdToProcess();
+        void ProcessImages(int num_of_images, const Folders& folders_path);
 
-		void ProcessImage(std::string folder_path);
+    private:
 
-		std::mutex mtx_;
+        int GetNextImgIdToProcess();
 
-		int image_id_to_process_;
+        void ProcessImage(const Folders& folders_path);
 
-		int num_of_threads_;
+        std::mutex mtx_;
 
-		int num_of_images_;
-	};
+        int image_id_to_process_;
+
+        int num_of_threads_;
+
+        int num_of_images_;
+    };
 }

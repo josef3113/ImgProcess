@@ -24,3 +24,5 @@
 20489	21526	678468246	tests/app_test.exe	dffa05f091e56f8b
 10851	23052	678468248	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/__/googletest/src/gtest-all.cc.obj	4ecdc4ee2540f5c9
 23053	23321	678468248	lib/gmockd.lib	87a431c89904e684
+6	1627	678572308	src/app/CMakeFiles/app.dir/main.cpp.obj	6c4d1b8ddfebc1f3
+1627	2296	678572308	src/app/app.exe	6028efde61259171

@@ -4,9 +4,14 @@
 
 TEST(ImagesProcessorTest, basic_test)
 {
-	int num_of_thread = 10;
-	some_lib::ImagesProcessor processor{ num_of_thread };
+    int num_of_thread = 10;
+    img_process::ImagesProcessor processor{ num_of_thread };
 
-	int num_of_imgs = 10;
-	EXPECT_NO_THROW(processor.ProcessImages(num_of_imgs, "empty_path"));
+    int num_of_imgs = 10;
+
+    img_process::ImagesProcessor::Folders folders;
+    folders.input_folder_name_ = "data";
+    folders.output_folder_name_ = "output test";
+
+    EXPECT_NO_THROW(processor.ProcessImages(num_of_imgs, folders));
 }

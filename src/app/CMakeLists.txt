@@ -1,7 +1,7 @@
-add_executable(app main.cpp)
+add_executable(app_exe main.cpp)
 
 target_link_libraries(
-	app
+	app_exe
 	PUBLIC
-	some_lib
+	img_process_lib
 )

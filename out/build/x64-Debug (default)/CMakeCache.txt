@@ -123,7 +123,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //No help, variable specified on the command line.
-CMAKE_INSTALL_PREFIX:PATH=C:/Users/josef/Source/Repos/ImgProcess/out/install/x64-Debug (default)
+CMAKE_INSTALL_PREFIX:PATH=C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug (default)
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -497,7 +497,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[C:/Program Files (x86)/Microsoft V
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Users/josef/Source/Repos/ImgProcess/out/install/x64-Debug (default)
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Users/josef/source/repos/ImgProcess/out/install/x64-Debug (default)
 //Path to a program.
 _Python_EXECUTABLE:INTERNAL=C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/python.exe
 //Python Properties
