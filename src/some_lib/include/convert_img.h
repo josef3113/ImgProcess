@@ -13,8 +13,8 @@ namespace img_process {
                             float g_multipler,
                             float r_multipler)
             :b_multipler_{ b_multipler }
-            , g_multipler_{ g_multipler }
-            , r_multipler_{ r_multipler }{}
+            ,g_multipler_{ g_multipler }
+            ,r_multipler_{ r_multipler }{}
 
             float b_multipler_;
 
@@ -24,6 +24,6 @@ namespace img_process {
         };
 
         static cv::Mat Convert(const cv::Mat& origin_img,
-                               ConvertImgBGRtoBW::BGRMultipliers multipliers);
+                               const ConvertImgBGRtoBW::BGRMultipliers& multipliers);
     };
 }

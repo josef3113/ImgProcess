@@ -7,9 +7,9 @@ namespace img_process {
     int BlackWhiteImg::last_save_img_ = 0;
 
 
-    BlackWhiteImg::BlackWhiteImg(std::string input_folder_path,
-                                 std::string output_folder_path,
-                                 std::string img_name)
+    BlackWhiteImg::BlackWhiteImg(const std::string& input_folder_path,
+                                 const std::string& output_folder_path,
+                                 const std::string& img_name)
     {
         // read imag 
         ReadImg(input_folder_path, img_name);
@@ -23,7 +23,7 @@ namespace img_process {
 
 
 
-    void BlackWhiteImg::ReadImg(std::string folder_name, std::string img_name)
+    void BlackWhiteImg::ReadImg(const std::string& folder_name, const std::string& img_name)
     {
         std::string img_path = folder_name + "/" + img_name;
         img_ = cv::imread(img_path, cv::IMREAD_COLOR);
@@ -34,7 +34,7 @@ namespace img_process {
     }
 
 
-    bool BlackWhiteImg::SaveImg(std::string out_folder_name)
+    bool BlackWhiteImg::SaveImg(const std::string& out_folder_name)
     {
         int save_id = -1;
         {// lock when take the id of img that save.
@@ -45,9 +45,9 @@ namespace img_process {
         boost::filesystem::create_directory(out_folder_name);
 
         std::string save_path_name = out_folder_name +
-            "/ image_" +
-            std::to_string(save_id) + ".png";
-
+                                     "/ image_" +
+                                     std::to_string(save_id) + ".png";
+         
         return cv::imwrite(save_path_name, img_);
     }
 }

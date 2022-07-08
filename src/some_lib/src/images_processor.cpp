@@ -14,7 +14,7 @@ namespace img_process {
 
 
 
-    void ImagesProcessor::ProcessImages(int num_of_images, Folders folders_path) {
+    void ImagesProcessor::ProcessImages(int num_of_images, const Folders& folders_path) {
 
         num_of_images_ = num_of_images;
 
@@ -44,7 +44,7 @@ namespace img_process {
 
 
 
-    void ImagesProcessor::ProcessImage(Folders folders_path) {
+    void ImagesProcessor::ProcessImage(const Folders& folders_path) {
 
         int image_id = GetNextImgIdToProcess();
 

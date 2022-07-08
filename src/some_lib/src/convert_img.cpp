@@ -4,7 +4,7 @@
 namespace img_process {
 
     cv::Mat ConvertImgBGRtoBW::Convert(const cv::Mat& origin_img,
-                                       ConvertImgBGRtoBW::BGRMultipliers multipliers)
+                                       const ConvertImgBGRtoBW::BGRMultipliers& multipliers)
     {
         cv::Mat img_res(origin_img.rows, origin_img.cols, 1);
 

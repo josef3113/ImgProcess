@@ -16,13 +16,13 @@ namespace img_process {
 
         ImagesProcessor(int num_of_threads);
 
-        void ProcessImages(int num_of_images, Folders folders_path);
+        void ProcessImages(int num_of_images, const Folders& folders_path);
 
     private:
 
         int GetNextImgIdToProcess();
 
-        void ProcessImage(Folders folders_path);
+        void ProcessImage(const Folders& folders_path);
 
         std::mutex mtx_;
 

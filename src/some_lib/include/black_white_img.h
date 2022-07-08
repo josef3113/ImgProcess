@@ -9,15 +9,15 @@ namespace img_process {
     // class the get path and name of image,load the img ,convert to black/white and save the result.
     class BlackWhiteImg {
     public:
-        BlackWhiteImg(std::string input_folder_path,
-                      std::string output_folder_path,
-                      std::string img_name);
+        BlackWhiteImg(const std::string& input_folder_path,
+                      const std::string& output_folder_path,
+                      const std::string& img_name);
 
     private:
 
-        void ReadImg(std::string folder_name, std::string img_name);
+        void ReadImg(const std::string& folder_name, const std::string& img_name);
 
-        bool SaveImg(std::string folder_name);
+        bool SaveImg(const std::string& folder_name);
 
         std::mutex increment_id_mtx_;
 
