@@ -8,25 +8,25 @@
 
 int main()
 {
-    // ------------------- multi process code
-    // todo wrap this code on class MultiProcessImgsProcessor.
-	namespace bp = boost::process;
+ //   // ------------------- multi process code
+ //   // todo wrap this code on class MultiProcessImgsProcessor.
+	//namespace bp = boost::process;
 
-    int num_of_processes = 10;
-    std::vector<bp::child> processes;
+ //   int num_of_processes = 10;
+ //   std::vector<bp::child> processes;
 
-    for (int i = 0; i < num_of_processes; i++) {
-        processes.push_back(bp::child("img_process.exe"));
-    }
+ //   for (int i = 0; i < num_of_processes; i++) {
+ //       processes.push_back(bp::child("img_process.exe"));
+ //   }
 
-    for (auto& process : processes) {
-        if (process.joinable()) {
-            std::cout << "process.joinable()" << std::endl;
+ //   for (auto& process : processes) {
+ //       if (process.joinable()) {
+ //           std::cout << "process.joinable()" << std::endl;
 
-            process.join();
-        }
-    }
-    // end of multi process.
+ //           process.join();
+ //       }
+ //   }
+ //   // end of multi process.
 
 
 	// --------------- multi thread code ------
@@ -44,6 +44,14 @@ int main()
 
 		int image_count = 10;
 		some_lib::ImagesProcessor::Folders folders;
+		folders.input_folder_name_ = "data";
+
+		boost::filesystem::create_directory("output_app");
+
+		folders.output_folder_name_ = "output_app/output" +
+									std::to_string(worker_num) + 
+									"worker";
+
 		img_processor.ProcessImages(image_count, folders);
 
 		timer.Stop();
@@ -63,7 +71,7 @@ int main()
 		auto time_mesure = std::get<std::chrono::nanoseconds>(time);
 
 		std::cout << "num of worker " << num_worker
-			<< "take " << time_mesure.count() << "[nano sec]" << std::endl;
+			<< " take " << time_mesure.count() << "[nano sec]" << std::endl;
 	}
 	// end multi thread code.
 

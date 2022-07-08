@@ -36,6 +36,12 @@ include rules.ninja
 
 
 #############################################
+# Utility command for copy-files
+
+build copy-files: phony CMakeFiles\copy-files
+
+
+#############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
@@ -98,6 +104,13 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for list_install_components
 
 build list_install_components: phony
+
+
+#############################################
+# Custom command for CMakeFiles\copy-files
+
+build CMakeFiles\copy-files: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\josef\Desktop\greeneye\clone\ImgProcess\out\build\x64-Debug && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_directory C:/Users/josef/Desktop/greeneye/clone/ImgProcess/data C:/Users/josef/Desktop/greeneye/clone/ImgProcess/out/build/x64-Debug/data"
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -1070,7 +1083,7 @@ build some_lib.lib: phony src\some_lib\some_lib.lib
 #############################################
 # Folder: C:/Users/josef/Desktop/greeneye/clone/ImgProcess/out/build/x64-Debug
 
-build all: phony src\all src\img_process\all tests\all
+build all: phony copy-files src\all src\img_process\all tests\all
 
 # =============================================================================
 

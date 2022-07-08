@@ -32,13 +32,13 @@ namespace some_lib {
 					std::string img_name) {
 
 		// read imag 
-		//ReadImg(input_folder_path, img_name);
+		ReadImg(input_folder_path, img_name);
 
 		// converct img to black & white.
-		// img_ = ConvertBGRtoBW::Convert(img_, multipliers_);
+		 img_ = ConvertBGRtoBW::Convert(img_, multipliers_);
 
 		// save image
-		//SaveImg(output_folder_path);
+		SaveImg(output_folder_path);
 	}
 
 
@@ -64,7 +64,7 @@ namespace some_lib {
 
 		boost::filesystem::create_directory(out_folder_name);
 
-		std::string save_path = out_folder_name + "/"
+		std::string save_path = out_folder_name + "/ image_"
 								+ std::to_string(save_id) + ".png";
 
 		return cv::imwrite(save_path, img_);

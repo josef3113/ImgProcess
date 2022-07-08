@@ -55,7 +55,7 @@ namespace some_lib {
 			// read and do somting on image num image_id
 			BwImage{ folders_path.input_folder_name_,
 					folders_path.output_folder_name_ ,
-					std::to_string(image_id )};
+					std::to_string(image_id )+ ".JPG"};
 
 			image_id = GetNextImgIdToProcess();
 		}

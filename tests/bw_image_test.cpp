@@ -33,13 +33,9 @@ TEST(ConvertBGRtoBWImageTest, basic_test)
 TEST(BwImageTest, basic_test)
 {
 	int img_id = 1;
-	
-	try {
-		some_lib::BwImage{ "data", "empty_path", std::to_string(img_id) };
-	}
-	catch (std::exception ex) {
-		std::cout << ex.what() << std::endl;
 
-		EXPECT_EQ(1, 0);
-	}
+	EXPECT_NO_THROW(some_lib::BwImage( "data",
+										"output test",
+										std::to_string(img_id)+".JPG" ) );
+	
 }
