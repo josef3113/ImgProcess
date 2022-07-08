@@ -1,7 +1,7 @@
 #include "images_processor.h"
 #include "multi_thread_processor.h"
 #include <iostream>
-#include "bw_image.h"
+#include "black_white_img.h"
 
 
 
@@ -47,15 +47,16 @@ namespace some_lib {
 
 	void ImagesProcessor::ProcessImage(Folders folders_path) {
 
-		std::cout << "ProcessImage " << std::endl;
 		int image_id = GetNextImgIdToProcess();
 
+		// run over the imgs process and save them.
 		while ((image_id != -1) && (image_id < num_of_images_)) {
 
-			// read and do somting on image num image_id
-			BwImage{ folders_path.input_folder_name_,
-					folders_path.output_folder_name_ ,
-					std::to_string(image_id )+ ".JPG"};
+			// read and process img from input path and img name
+			// save the result in output folder.
+			BlackWhiteImg img{folders_path.input_folder_name_,
+							  folders_path.output_folder_name_ ,
+							  std::to_string(image_id )+ ".JPG"};
 
 			image_id = GetNextImgIdToProcess();
 		}

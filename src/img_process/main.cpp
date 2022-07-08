@@ -1,7 +1,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
-#include "bw_image.h"
+#include "black_white_img.h"
 
 
 
@@ -17,7 +17,7 @@ int main()
     // 3 - save result 
 
     // this function - will be execute 2,3.
-    some_lib::BwImage("empty", "empty", std::to_string(1));
+    some_lib::BlackWhiteImg("empty", "empty", std::to_string(1));
 
 
     // current show img.

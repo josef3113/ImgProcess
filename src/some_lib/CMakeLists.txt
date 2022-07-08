@@ -1,7 +1,7 @@
 add_library(some_lib 
 "src/time_measure.cpp" 
-"src/image_math.cpp" 
-"src/bw_image.cpp"
+"src/convert_img.cpp" 
+"src/black_white_img.cpp"
 "src/images_processor.cpp"
 )
 
