@@ -6,45 +6,45 @@
 
 namespace some_lib {
 
-	template <typename T>
-	class MultiThreadProcessor {
-	public:
-		using Type = T;
-		using Function = std::function<void(Type)>;
-		using Task = std::tuple<T, Function>;
+    template <typename T>
+    class MultiThreadProcessor {
+    public:
+        using Type = T;
+        using Function = std::function<void(Type)>;
+        using Task = std::tuple<T, Function>;
 
 
-		void Process(int num_of_threads, Task task) {
-			std::cout << "Process ..." << std::endl;
+        void Process(int num_of_threads, Task task) {
+            std::cout << "Process ..." << std::endl;
 
-			task_ = task;
+            task_ = task;
 
-			std::vector<std::thread> workers;
+            std::vector<std::thread> workers;
 
-			for (int i = 0; i < num_of_threads; i++) {
-				workers.push_back(std::thread{ std::bind(&MultiThreadProcessor<T>::Do,this) });
-			}
+            for (int i = 0; i < num_of_threads; i++) {
+                workers.push_back(std::thread{ std::bind(&MultiThreadProcessor<T>::Do,this) });
+            }
 
-			// wait that all tasks will be done.
-			for (auto& t : workers) {
-				if (t.joinable()) {
-					t.join();
-				}
-			}
+            // wait that all tasks will be done.
+            for (auto& t : workers) {
+                if (t.joinable()) {
+                    t.join();
+                }
+            }
 
-			std::cout << "Process Done." << std::endl;
-		}
+            std::cout << "Process Done." << std::endl;
+        }
 
-	private:
+    private:
 
-		// apply the mission that get.
-		void Do() {
-			T arg = std::get<T>(task_);
-			auto mission = std::get<Function>(task_);
+        // apply the mission that get.
+        void Do() {
+            T arg = std::get<T>(task_);
+            auto mission = std::get<Function>(task_);
 
-			mission(arg);
-		}
+            mission(arg);
+        }
 
-		MultiThreadProcessor<T>::Task task_;
-	};
+        MultiThreadProcessor<T>::Task task_;
+    };
 }

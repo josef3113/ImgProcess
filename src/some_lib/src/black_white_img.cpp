@@ -4,50 +4,50 @@
 
 
 namespace some_lib {
-	int BlackWhiteImg::last_save_img_ = 0;
-
-	
-	BlackWhiteImg::BlackWhiteImg(std::string input_folder_path,
-								 std::string output_folder_path,
-								 std::string img_name)
-	{
-		// read imag 
-		ReadImg(input_folder_path, img_name);
-
-		// converct img to black & white.
-		 img_ = ConvertImgBGRtoBW::Convert(img_, multipliers_);
-
-		// save image
-		SaveImg(output_folder_path);
-	}
+    int BlackWhiteImg::last_save_img_ = 0;
 
 
+    BlackWhiteImg::BlackWhiteImg(std::string input_folder_path,
+                                 std::string output_folder_path,
+                                 std::string img_name)
+    {
+        // read imag 
+        ReadImg(input_folder_path, img_name);
 
-	void BlackWhiteImg::ReadImg(std::string folder_name, std::string img_name)
-	{
-		std::string img_path = folder_name + "/" + img_name;
-		img_ = cv::imread(img_path, cv::IMREAD_COLOR);
+        // converct img to black & white.
+        img_ = ConvertImgBGRtoBW::Convert(img_, multipliers_);
 
-		if (img_.empty()) {
-			throw std::runtime_error("cannot read img " + img_path);
-		}
-	}
+        // save image
+        SaveImg(output_folder_path);
+    }
 
 
-	bool BlackWhiteImg::SaveImg(std::string out_folder_name)
-	{
-		int save_id = -1;
-		{// lock when take the id of img that save.
-			std::lock_guard lg(increment_id_mtx_);
-			save_id = last_save_img_++;
-		}// unlock
 
-		boost::filesystem::create_directory(out_folder_name);
+    void BlackWhiteImg::ReadImg(std::string folder_name, std::string img_name)
+    {
+        std::string img_path = folder_name + "/" + img_name;
+        img_ = cv::imread(img_path, cv::IMREAD_COLOR);
 
-		std::string save_path_name = out_folder_name +
-									 "/ image_" +
-									 std::to_string(save_id) + ".png";
+        if (img_.empty()) {
+            throw std::runtime_error("cannot read img " + img_path);
+        }
+    }
 
-		return cv::imwrite(save_path_name, img_);
-	}
+
+    bool BlackWhiteImg::SaveImg(std::string out_folder_name)
+    {
+        int save_id = -1;
+        {// lock when take the id of img that save.
+            std::lock_guard lg(increment_id_mtx_);
+            save_id = last_save_img_++;
+        }// unlock
+
+        boost::filesystem::create_directory(out_folder_name);
+
+        std::string save_path_name = out_folder_name +
+            "/ image_" +
+            std::to_string(save_id) + ".png";
+
+        return cv::imwrite(save_path_name, img_);
+    }
 }

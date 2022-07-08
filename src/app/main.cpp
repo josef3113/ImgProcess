@@ -8,73 +8,73 @@
 
 int main()
 {
- //   // ------------------- multi process code
- //   // todo wrap this code on class MultiProcessImgsProcessor.
-	//namespace bp = boost::process;
+    //   // ------------------- multi process code
+    //   // todo wrap this code on class MultiProcessImgsProcessor.
+       //namespace bp = boost::process;
 
- //   int num_of_processes = 10;
- //   std::vector<bp::child> processes;
+    //   int num_of_processes = 10;
+    //   std::vector<bp::child> processes;
 
- //   for (int i = 0; i < num_of_processes; i++) {
- //       processes.push_back(bp::child("img_process.exe"));
- //   }
+    //   for (int i = 0; i < num_of_processes; i++) {
+    //       processes.push_back(bp::child("img_process.exe"));
+    //   }
 
- //   for (auto& process : processes) {
- //       if (process.joinable()) {
- //           std::cout << "process.joinable()" << std::endl;
+    //   for (auto& process : processes) {
+    //       if (process.joinable()) {
+    //           std::cout << "process.joinable()" << std::endl;
 
- //           process.join();
- //       }
- //   }
- //   // end of multi process.
+    //           process.join();
+    //       }
+    //   }
+    //   // end of multi process.
 
 
-	// --------------- multi thread code ------
+       // --------------- multi thread code ------
     utilities::TimeMeasur timer;
 
-	std::vector<utilities::TimeMeasur::TimeProcess> times_process;
+    std::vector<utilities::TimeMeasur::TimeProcess> times_process;
 
-	int max_num_worker = 9;
-	for (int i = 1; i <= max_num_worker; i++) {
+    int max_num_worker = 9;
+    for (int i = 1; i <= max_num_worker; i++) {
 
-		timer.Start();
+        timer.Start();
 
-		int worker_num = i;
-		some_lib::ImagesProcessor img_processor{ worker_num };
+        int worker_num = i;
+        some_lib::ImagesProcessor img_processor{ worker_num };
 
-		int image_count = 10;
-		some_lib::ImagesProcessor::Folders folders;
-		folders.input_folder_name_ = "data";
+        int image_count = 10;
+        some_lib::ImagesProcessor::Folders folders;
+        folders.input_folder_name_ = "data";
 
-		boost::filesystem::create_directory("output_app");
+        boost::filesystem::create_directory("output_app");
 
-		folders.output_folder_name_ = "output_app/output" +
-									std::to_string(worker_num) + 
-									"worker";
+        folders.output_folder_name_ = "output_app/output" +
+                                        std::to_string(worker_num) +
+                                        "worker";
 
-		img_processor.ProcessImages(image_count, folders);
+        img_processor.ProcessImages(image_count, folders);
 
-		timer.Stop();
+        timer.Stop();
 
-		times_process.push_back(utilities::TimeMeasur::TimeProcess{ i, timer.GetTime().count() });
+        times_process.push_back(utilities::TimeMeasur::TimeProcess{ i, timer.GetTime().count() });
 
-		timer.Reset();
-	}
+        timer.Reset();
+    }
 
 
 
-	std::cout << "summary app \n\n" << std::endl;
+    std::cout << "summary app \n\n" << std::endl;
 
-	for (const auto& time : times_process) {
+    for (const auto& time : times_process) {
 
-		int num_worker = std::get<int>(time);
-		auto time_mesure = std::get<std::chrono::nanoseconds>(time);
+        int num_worker = std::get<int>(time);
+        auto time_mesure = std::get<std::chrono::nanoseconds>(time);
 
-		std::cout << "num of worker " << num_worker
-			<< " take " << time_mesure.count() << "[nano sec]" << std::endl;
-	}
-	// end multi thread code.
+        std::cout << "num of worker " << num_worker
+            << " take " << time_mesure.count() << "[nano sec]" << std::endl;
+    }
+    // end multi thread code.
 
-	int a = 0;
-	std::cin >> a;
+    int a = 0;
+    std::cin >> a;
 }

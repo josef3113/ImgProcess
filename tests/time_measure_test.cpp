@@ -5,9 +5,9 @@
 
 TEST(TimeMeasurTest, basic_test)
 {
-	utilities::TimeMeasur measur;
+    utilities::TimeMeasur measur;
 
-	EXPECT_NO_THROW( measur.Start());
-	EXPECT_NO_THROW(measur.Stop());
-	EXPECT_NO_THROW(measur.GetTime());
+    EXPECT_NO_THROW(measur.Start());
+    EXPECT_NO_THROW(measur.Stop());
+    EXPECT_NO_THROW(measur.GetTime());
 }

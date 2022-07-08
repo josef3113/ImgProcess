@@ -6,25 +6,25 @@
 
 TEST(ConvertBGRtoBWImageTest, basic_test)
 {
-	std::string image_path = cv::samples::findFile("starry_night.jpg");
-	cv::Mat img = cv::imread(image_path, cv::IMREAD_COLOR);
+    std::string image_path = cv::samples::findFile("starry_night.jpg");
+    cv::Mat img = cv::imread(image_path, cv::IMREAD_COLOR);
 
-	float b_multiple = 0.299;
-	float g_multiple = 0.587;
-	float r_multiple = 0.114;
+    float b_multiple = 0.299;
+    float g_multiple = 0.587;
+    float r_multiple = 0.114;
 
-	some_lib::ConvertImgBGRtoBW::BGRMultipliers multipliers{ b_multiple,
-															 g_multiple,
-															 r_multiple };
+    some_lib::ConvertImgBGRtoBW::BGRMultipliers multipliers{ b_multiple,
+                                                             g_multiple,
+                                                             r_multiple };
 
-	auto res_img = some_lib::ConvertImgBGRtoBW::Convert(img, multipliers);
+    auto res_img = some_lib::ConvertImgBGRtoBW::Convert(img, multipliers);
 
-	boost::filesystem::create_directory("output test");
+    boost::filesystem::create_directory("output test");
 
-	cv::imwrite("output test/origin.png", img);
-	cv::imwrite("output test/result.png", res_img);
+    cv::imwrite("output test/origin.png", img);
+    cv::imwrite("output test/result.png", res_img);
 
-	std::cout << "# check output test folder" << std::endl;
+    std::cout << "# check output test folder" << std::endl;
 }
 
 
@@ -32,10 +32,10 @@ TEST(ConvertBGRtoBWImageTest, basic_test)
 
 TEST(BwImageTest, basic_test)
 {
-	int img_id = 1;
+    int img_id = 1;
 
-	EXPECT_NO_THROW(some_lib::BlackWhiteImg( "data",
-											 "output test",
-											  std::to_string(img_id)+".JPG" ) );
-	
+    EXPECT_NO_THROW(some_lib::BlackWhiteImg("data",
+                                            "output test",
+                                            std::to_string(img_id) + ".JPG"));
+
 }

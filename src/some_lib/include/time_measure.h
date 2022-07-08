@@ -3,27 +3,27 @@
 
 namespace utilities {
 
-	class TimeMeasur {
-	public:
+    class TimeMeasur {
+    public:
 
-		using nanosecond = std::chrono::nanoseconds;
-		using time_point = std::chrono::steady_clock::time_point;
+        using nanosecond = std::chrono::nanoseconds;
+        using time_point = std::chrono::steady_clock::time_point;
 
-		// represent num of worker and how match time its take.
-		using TimeProcess = std::tuple<int, std::chrono::nanoseconds>;
+        // represent num of worker and how match time its take.
+        using TimeProcess = std::tuple<int, std::chrono::nanoseconds>;
 
-		void Start(); 
+        void Start();
 
-		void Stop();
+        void Stop();
 
-		nanosecond GetTime();
+        nanosecond GetTime();
 
-		void Reset();
+        void Reset();
 
 
-	private:
-		time_point start_;
+    private:
+        time_point start_;
 
-		time_point end_;
-	};
+        time_point end_;
+    };
 }

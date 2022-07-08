@@ -5,31 +5,31 @@
 
 namespace some_lib {
 
-	class ImagesProcessor {
-	public:
+    class ImagesProcessor {
+    public:
 
-		struct Folders {
-			std::string input_folder_name_{"empty path"};
-			std::string output_folder_name_{ "empty path" };
-		};
+        struct Folders {
+            std::string input_folder_name_{ "empty path" };
+            std::string output_folder_name_{ "empty path" };
+        };
 
 
-		ImagesProcessor(int num_of_threads);
+        ImagesProcessor(int num_of_threads);
 
-		void ProcessImages(int num_of_images, Folders folders_path);
+        void ProcessImages(int num_of_images, Folders folders_path);
 
-	private:
+    private:
 
-		int GetNextImgIdToProcess();
+        int GetNextImgIdToProcess();
 
-		void ProcessImage(Folders folders_path);
+        void ProcessImage(Folders folders_path);
 
-		std::mutex mtx_;
+        std::mutex mtx_;
 
-		int image_id_to_process_;
+        int image_id_to_process_;
 
-		int num_of_threads_;
+        int num_of_threads_;
 
-		int num_of_images_;
-	};
+        int num_of_images_;
+    };
 }
