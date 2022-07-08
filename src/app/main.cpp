@@ -5,30 +5,33 @@
 #include <boost/filesystem.hpp>
 
 
+
+using ProcessingTimes = std::vector<utilities::TimeMeasur::TimeProcess>;
+
+ProcessingTimes RunMultiThread();
+
+ProcessingTimes RunMultiProcess();
+
+void Summary(const ProcessingTimes& processing_times);
+
+
+
 int main()
 {
-    //   // ------------------- multi process code
-    //   // todo wrap this code on class MultiProcessImgsProcessor.
-       //namespace bp = boost::process;
+    auto multi_process_times = RunMultiProcess();
 
-    //   int num_of_processes = 10;
-    //   std::vector<bp::child> processes;
+    auto multi_thread_times = RunMultiThread();
 
-    //   for (int i = 0; i < num_of_processes; i++) {
-    //       processes.push_back(bp::child("img_process.exe"));
-    //   }
+    Summary(multi_thread_times/*, multi_process_times*/);
 
-    //   for (auto& process : processes) {
-    //       if (process.joinable()) {
-    //           std::cout << "process.joinable()" << std::endl;
-
-    //           process.join();
-    //       }
-    //   }
-    //   // end of multi process.
+    int a = 0;
+    std::cin >> a;
+}
 
 
-       // --------------- multi thread code ------
+
+ProcessingTimes RunMultiThread()
+{
     utilities::TimeMeasur timer;
 
     std::vector<utilities::TimeMeasur::TimeProcess> times_process;
@@ -60,11 +63,17 @@ int main()
         timer.Reset();
     }
 
+    return times_process;
+}
 
 
+
+
+void Summary(const ProcessingTimes& processing_times)
+{
     std::cout << "summary app \n\n" << std::endl;
 
-    for (const auto& time : times_process) {
+    for (const auto& time : processing_times) {
 
         int num_worker = std::get<int>(time);
         auto time_mesure = std::get<std::chrono::nanoseconds>(time);
@@ -72,8 +81,32 @@ int main()
         std::cout << "num of worker " << num_worker
             << " take " << time_mesure.count() << "[nano sec]" << std::endl;
     }
-    // end multi thread code.
+}
 
-    int a = 0;
-    std::cin >> a;
+
+
+// todo - complete 
+ProcessingTimes RunMultiProcess()
+{
+    //   // ------------------- multi process code
+   //   // todo wrap this code on class MultiProcessImgsProcessor.
+      //namespace bp = boost::process;
+
+   //   int num_of_processes = 10;
+   //   std::vector<bp::child> processes;
+
+   //   for (int i = 0; i < num_of_processes; i++) {
+   //       processes.push_back(bp::child("img_process.exe"));
+   //   }
+
+   //   for (auto& process : processes) {
+   //       if (process.joinable()) {
+   //           std::cout << "process.joinable()" << std::endl;
+
+   //           process.join();
+   //       }
+   //   }
+   //   // end of multi process.
+
+    return ProcessingTimes{};
 }
