@@ -8,10 +8,8 @@
 
 namespace img_process {
 
-
     class MultiProcessProcessor {
     public:
-
         void Process(int num_of_process, const std::string& exe_path) const;
     };
 }

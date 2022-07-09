@@ -1,6 +1,7 @@
 #include "convert_img.h"
 
 
+
 namespace img_process {
 
     cv::Mat ConvertImgBGRtoBW::Convert(const cv::Mat& origin_img,

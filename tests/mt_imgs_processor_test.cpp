@@ -2,6 +2,7 @@
 #include "mt_imgs_processor.h"
 
 
+
 TEST(MTImagesProcessorTest, basic_test)
 {
     int num_of_thread = 10;

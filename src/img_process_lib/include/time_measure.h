@@ -1,11 +1,12 @@
 #pragma once
 #include <chrono>
 
+
+
 namespace utilities {
 
     class TimeMeasur {
     public:
-
         using nanosecond = std::chrono::nanoseconds;
         using time_point = std::chrono::steady_clock::time_point;
 
@@ -19,7 +20,6 @@ namespace utilities {
         nanosecond GetTime() const;
 
         void Reset();
-
 
     private:
         time_point start_;

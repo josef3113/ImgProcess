@@ -45,8 +45,6 @@ namespace img_process {
     void MPImagesProcessor::CreateSharedDate(int num_of_imgs) const
     {
         // --------------- create shared memory for children
-        std::cout << "In parent" << std::endl;
-
         bi::shared_memory_object::remove("VectorMemory");
 
         bi::managed_shared_memory segment(bi::create_only,
@@ -78,6 +76,5 @@ namespace img_process {
 
         // the third element in vector is the last img id that saved.
         shared_vec->push_back(0);
-
     }
 }

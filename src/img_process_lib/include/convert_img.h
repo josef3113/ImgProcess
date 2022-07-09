@@ -3,6 +3,7 @@
 #include <opencv2/imgcodecs.hpp>
 
 
+
 namespace img_process {
 
     class ConvertImgBGRtoBW {
@@ -10,8 +11,8 @@ namespace img_process {
         struct BGRMultipliers {
 
             BGRMultipliers(float b_multipler,
-                            float g_multipler,
-                            float r_multipler)
+                           float g_multipler,
+                           float r_multipler)
             :b_multipler_{ b_multipler }
             ,g_multipler_{ g_multipler }
             ,r_multipler_{ r_multipler }{}

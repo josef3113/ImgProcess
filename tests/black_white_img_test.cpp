@@ -22,11 +22,11 @@ TEST(ConvertBGRtoBWImageTest, basic_test)
     boost::filesystem::create_directory("output test");
 
     cv::imwrite("output test/origin.png", img);
+    
     cv::imwrite("output test/result.png", res_img);
 
     std::cout << "# check output test folder" << std::endl;
 }
-
 
 
 

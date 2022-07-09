@@ -36,7 +36,6 @@ namespace img_process {
         }
 
     private:
-
         // apply the mission that get.
         void Do() const {
             Type arg = std::get<Type>(task_);

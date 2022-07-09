@@ -17,10 +17,6 @@ namespace img_process {
 
         for (auto& process : processes) {
             if (process.joinable()) {
-
-                std::string msg = std::to_string(process.id()) + "joinable ";
-                std::cout << msg << std::endl;
-
                 process.join();
             }
         }

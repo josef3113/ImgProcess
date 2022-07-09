@@ -30,6 +30,7 @@ namespace img_process {
     }
 
 
+
     int MTImagesProcessor::GetNextImgIdToProcess() {
 
         int current_image_id = -1;
@@ -39,8 +40,6 @@ namespace img_process {
 
             current_image_id = image_id_to_process_--;
         }// unlock
-
-        std::cout << current_image_id << std::endl;
 
         return current_image_id;
     }

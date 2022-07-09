@@ -2,6 +2,7 @@
 #include "folders.h"
 
 
+
 namespace img_process {
 
     // multi process imgs processor.

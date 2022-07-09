@@ -3,8 +3,11 @@
 #include <boost/filesystem.hpp>
 
 
+
 namespace img_process {
+
     int BlackWhiteImg::last_save_img_ = 0;
+
 
 
     BlackWhiteImg::BlackWhiteImg(const std::string& input_folder_path,
@@ -39,6 +42,7 @@ namespace img_process {
             throw std::runtime_error("cannot read img " + img_path);
         }
     }
+
 
 
     bool BlackWhiteImg::SaveImg(const std::string& out_folder_name)

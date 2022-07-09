@@ -17,8 +17,6 @@ namespace img_process {
 
     int MPBlackWhiteImg::GetLastImgIdSaved()
     {
-        std::cout << "MPBlackWhiteImg::GetLastImgIdSaved" << std::endl;
-
         int inx_of_last_save_img_id = 2;
 
         int id_to_return = -1;
@@ -29,10 +27,6 @@ namespace img_process {
             id_to_return = ++(*shared_vec_)[inx_of_last_save_img_id];
 
         }// ulock the mutex
-
-        std::string msg = "id_to_return = " + std::to_string(id_to_return);
-
-        std::cout << msg << std::endl;
 
         return id_to_return;
     }

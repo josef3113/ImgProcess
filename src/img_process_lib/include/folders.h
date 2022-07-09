@@ -1,6 +1,8 @@
 #pragma once 
 #include <string>
 
+
+
 namespace img_process {
 
     struct Folders {

@@ -19,13 +19,8 @@ namespace img_process {
         virtual int GetLastImgIdSaved() override;
 
     private:
-
         img_process::SharedMutexes* shared_mutexs_;
         
         img_process::SharedVector* shared_vec_;
-
     };
-
-
-
 }

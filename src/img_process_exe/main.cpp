@@ -1,6 +1,3 @@
-#include <opencv2/core.hpp>
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
 #include "mp_black_white_img.h"
 #include <iostream>
 #include "shared_data.h"
@@ -8,19 +5,12 @@
 
 
 
-using namespace cv;
-
-
-
-
-
-
 int main()
 {
     namespace bi = boost::interprocess;
 
-    std::string msg = "in child pid" + std::to_string(getpid());
 
+    // take vector and mutexes from shared memory.
     //Open already created shared memory object.
     bi::shared_memory_object shm(bi::open_only, "MutexMemory", bi::read_write);
 
@@ -34,6 +24,8 @@ int main()
 
     img_process::SharedVector* shared_vec = 
                             segment.find<img_process::SharedVector>("SharedVector").first;
+    // end taking data from shared memory.
+
 
     boost::filesystem::create_directory("output_app");
 
@@ -62,7 +54,6 @@ int main()
 
         std::string img_name = std::to_string(val) + ".JPG";
 
-        // process the img id that get.
         img_process::MPBlackWhiteImg bw_img(input_folder,
                                             output_folder_name,
                                             img_name,
@@ -75,11 +66,6 @@ int main()
             bi::scoped_lock<bi::interprocess_mutex> lock(shared_mutexes->img_id_process_mutex);
             
             val = (*shared_vec)[inx_of_num_img];
-
-            std::string msg = "val = " + std::to_string(val) +
-                "pid " + std::to_string(getpid());
-
-            std::cout << msg << std::endl;
             
             (*shared_vec)[inx_of_num_img]--;
         }
