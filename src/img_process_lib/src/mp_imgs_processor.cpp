@@ -42,7 +42,7 @@ namespace img_process {
 
 
 
-    void MPImagesProcessor::CreateSharedDate(int num_of_imgs) 
+    void MPImagesProcessor::CreateSharedDate(int num_of_imgs) const
     {
         // --------------- create shared memory for children
         std::cout << "In parent" << std::endl;

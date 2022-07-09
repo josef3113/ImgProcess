@@ -14,7 +14,7 @@ namespace img_process {
         void ProcessImages(int num_of_images) const;
 
     private:
-        void CreateSharedDate(int num_of_imgs);
+        void CreateSharedDate(int num_of_imgs) const;
 
         int num_of_processes_;
     };

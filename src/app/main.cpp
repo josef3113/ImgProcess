@@ -76,7 +76,7 @@ ProcessingTimes RunMultiProcess()
     std::vector<utilities::TimeMeasur::TimeProcess> times_process;
 
     // current code not supporting multi process.
-    int max_num_worker = 0;
+    int max_num_worker = 9;
     for (int i = 1; i <= max_num_worker; i++) {
 
         timer.Start();
