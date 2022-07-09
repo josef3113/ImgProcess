@@ -11,7 +11,7 @@ namespace img_process {
 
 
 
-    void MPImagesProcessor::ProcessImages(int num_of_images) 
+    void MPImagesProcessor::ProcessImages(int num_of_images) const
     {
         //todo need to create shared memory of int that children (img_process_exe.exe) use to choose img id.
 

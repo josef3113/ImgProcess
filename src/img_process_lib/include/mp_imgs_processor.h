@@ -7,10 +7,9 @@ namespace img_process {
     // multi process imgs processor.
     class MPImagesProcessor {
     public:
-
         MPImagesProcessor(int num_of_processes);
 
-        void ProcessImages(int num_of_images);
+        void ProcessImages(int num_of_images) const;
 
     private:
         int num_of_processes_;

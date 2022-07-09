@@ -16,7 +16,7 @@ namespace utilities {
 
 
 
-    TimeMeasur::nanosecond TimeMeasur::GetTime()
+    TimeMeasur::nanosecond TimeMeasur::GetTime() const
     {
         return end_ - start_;
     }

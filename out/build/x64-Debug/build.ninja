@@ -212,6 +212,14 @@ build src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mp_imgs_processor.c
   TARGET_COMPILE_PDB = src\img_process_lib\CMakeFiles\img_process_lib.dir\img_process_lib.pdb
   TARGET_PDB = src\img_process_lib\img_process_lib.pdb
 
+build src\img_process_lib\CMakeFiles\img_process_lib.dir\src\multi_process_processor.cpp.obj: CXX_COMPILER__img_process_lib_Debug ..\..\..\src\img_process_lib\src\multi_process_processor.cpp || cmake_object_order_depends_target_img_process_lib_Debug
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
+  INCLUDES = -I..\..\..\src\img_process_lib\include -IC:\boost_1_77_0\boost_1_77_0 -IC:\opencv\build\include
+  OBJECT_DIR = src\img_process_lib\CMakeFiles\img_process_lib.dir
+  OBJECT_FILE_DIR = src\img_process_lib\CMakeFiles\img_process_lib.dir\src
+  TARGET_COMPILE_PDB = src\img_process_lib\CMakeFiles\img_process_lib.dir\img_process_lib.pdb
+  TARGET_PDB = src\img_process_lib\img_process_lib.pdb
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target img_process_lib
@@ -220,7 +228,7 @@ build src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mp_imgs_processor.c
 #############################################
 # Link the static library src\img_process_lib\img_process_lib.lib
 
-build src\img_process_lib\img_process_lib.lib: CXX_STATIC_LIBRARY_LINKER__img_process_lib_Debug src\img_process_lib\CMakeFiles\img_process_lib.dir\src\time_measure.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\convert_img.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\black_white_img.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mt_imgs_processor.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mp_imgs_processor.cpp.obj
+build src\img_process_lib\img_process_lib.lib: CXX_STATIC_LIBRARY_LINKER__img_process_lib_Debug src\img_process_lib\CMakeFiles\img_process_lib.dir\src\time_measure.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\convert_img.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\black_white_img.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mt_imgs_processor.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mp_imgs_processor.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\multi_process_processor.cpp.obj
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = src\img_process_lib\CMakeFiles\img_process_lib.dir

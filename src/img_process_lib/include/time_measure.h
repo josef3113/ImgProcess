@@ -9,14 +9,14 @@ namespace utilities {
         using nanosecond = std::chrono::nanoseconds;
         using time_point = std::chrono::steady_clock::time_point;
 
-        // represent num of worker and how match time its take.
+        // represent num of worker and how much time its take.
         using TimeProcess = std::tuple<int, std::chrono::nanoseconds>;
 
         void Start();
 
         void Stop();
 
-        nanosecond GetTime();
+        nanosecond GetTime() const;
 
         void Reset();
 
