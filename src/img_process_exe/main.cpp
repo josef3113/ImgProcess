@@ -12,15 +12,11 @@ using namespace cv;
 
 
 
+
+
+
 int main()
 {
-    // todo - need to include shared-memory / semaphore that get img_id process safe.
-    // 1 - take img_id to process - lock the process.
-    // 2 - process the img that load.
-    // 3 - save result 
-
-
-    // ------- read data from shared memory
     namespace bi = boost::interprocess;
 
     std::string msg = "in child pid" + std::to_string(getpid());
@@ -30,7 +26,8 @@ int main()
 
     //Map the whole shared memory in this process
     bi::mapped_region region(shm, bi::read_write);
-    img_process::SharedMutexes* mem = (img_process::SharedMutexes*)region.get_address();
+    img_process::SharedMutexes* shared_mutexes = (img_process::SharedMutexes*)region.get_address();
+
 
     bi::managed_shared_memory segment(bi::open_only,
                                       "VectorMemory");  //segment name
@@ -40,14 +37,9 @@ int main()
 
     boost::filesystem::create_directory("output_app");
 
-
     int inx_of_num_img = 0;
     int inx_of_num_processers = 1;
     int inx_of_last_save_img_id = 2;
-
-    std::cout << "num_imgs = " << (*shared_vec)[inx_of_num_img] << std::endl;
-    std::cout << "num_processers = " << (*shared_vec)[inx_of_num_processers] << std::endl;
-    std::cout << "num_last_save_img_id = " << (*shared_vec)[inx_of_last_save_img_id] << std::endl;
 
     int num_processors = (*shared_vec)[inx_of_num_processers];
 
@@ -57,7 +49,7 @@ int main()
 
     int val = -1;
     {
-        bi::scoped_lock<bi::interprocess_mutex> lock(mem->img_id_process_mutex);
+        bi::scoped_lock<bi::interprocess_mutex> lock(shared_mutexes->img_id_process_mutex);
 
         val = (*shared_vec)[inx_of_num_img];
 
@@ -66,22 +58,21 @@ int main()
 
     while (val >= 1)
     {
+        std::string input_folder = "data";
+
+        std::string img_name = std::to_string(val) + ".JPG";
+
         // process the img id that get.
-        img_process::MPBlackWhiteImg img1("data",
+        img_process::MPBlackWhiteImg bw_img(input_folder,
                                             output_folder_name,
-                                            std::to_string(val)+".JPG",
-            mem, shared_vec);
-        try {
+                                            img_name,
+                                            shared_mutexes,
+                                            shared_vec);
 
-        img1.Do();
-        }
-        catch (std::exception e) {
-
-            std::cout << e.what() << std::endl;
-        }
+        bw_img.Process();
 
         { // try take another img id.
-            bi::scoped_lock<bi::interprocess_mutex> lock(mem->img_id_process_mutex);
+            bi::scoped_lock<bi::interprocess_mutex> lock(shared_mutexes->img_id_process_mutex);
             
             val = (*shared_vec)[inx_of_num_img];
 
@@ -93,9 +84,5 @@ int main()
             (*shared_vec)[inx_of_num_img]--;
         }
     }
-    //std::string msg = "process id " + std::to_string( getpid());
-
-    //std::cout << msg << std::endl;
-
     return 0;
 }

@@ -6,6 +6,8 @@
 #include <boost/interprocess/sync/scoped_lock.hpp>
 #include <boost/interprocess/managed_shared_memory.hpp>
 #include <boost/interprocess/allocators/allocator.hpp>
+#include <iostream>
+
 
 
 namespace bi = boost::interprocess;
@@ -23,5 +25,34 @@ namespace img_process {
         
         boost::interprocess::interprocess_mutex last_save_img_id_mutex;
     };
+
+
+    class SharedMemory {
+
+    public:
+
+        SharedMemory();
+
+
+
+        int GetNumProcesses();
+
+
+
+        int GetImgIdToSave();
+
+
+
+        int GetNextImgId();
+
+
+
+    private:
+
+        img_process::SharedVector* shared_vec_;
+
+        img_process::SharedMutexes* shared_mutexes_;
+    };
+
 }
 

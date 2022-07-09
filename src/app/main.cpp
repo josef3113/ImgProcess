@@ -21,9 +21,9 @@ int main()
 {
     auto multi_process_times = RunMultiProcess();
 
-    //auto multi_thread_times = RunMultiThread();
+    auto multi_thread_times = RunMultiThread();
 
-    //Summary(multi_thread_times, multi_process_times);
+    Summary(multi_thread_times, multi_process_times);
 
     int a = 0;
     std::cin >> a;
@@ -53,7 +53,7 @@ ProcessingTimes RunMultiThread()
 
         folders.output_folder_name_ = "output_app/output" +
                                         std::to_string(worker_num) +
-                                        "worker";
+                                        "thread";
 
         img_processor.ProcessImages(image_count, folders);
 

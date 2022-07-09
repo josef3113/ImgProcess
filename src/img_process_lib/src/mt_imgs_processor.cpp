@@ -40,6 +40,8 @@ namespace img_process {
             current_image_id = image_id_to_process_--;
         }// unlock
 
+        std::cout << current_image_id << std::endl;
+
         return current_image_id;
     }
 
@@ -54,9 +56,13 @@ namespace img_process {
         {
             // read and process img from input path and img name
             // save the result in output folder.
+            std::string img_name = std::to_string(image_id) + ".JPG";
+
             BlackWhiteImg img{folders_path.input_folder_name_,
                               folders_path.output_folder_name_ ,
-                              std::to_string(image_id) + ".JPG" };
+                              img_name };
+
+            img.Process();
 
             image_id = GetNextImgIdToProcess();
         }

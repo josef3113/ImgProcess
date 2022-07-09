@@ -7,9 +7,9 @@ namespace img_process {
     int BlackWhiteImg::last_save_img_ = 0;
 
 
-    BlackWhiteImg::BlackWhiteImg(std::string input_folder_path,
-                                 std::string output_folder_path,
-                                 std::string img_name)
+    BlackWhiteImg::BlackWhiteImg(const std::string& input_folder_path,
+                                 const std::string& output_folder_path,
+                                 const std::string& img_name)
         :input_folder_path_{input_folder_path}
         ,output_folder_path_{output_folder_path}
         ,img_name_{img_name}
@@ -17,7 +17,7 @@ namespace img_process {
 
 
 
-    void BlackWhiteImg::Do() {
+    void BlackWhiteImg::Process() {
         // read imag 
         ReadImg(input_folder_path_, img_name_);
 
