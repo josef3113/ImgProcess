@@ -17,6 +17,7 @@ void Summary(const ProcessingTimes& mt_processing_times,
              const ProcessingTimes& mp_processing_times);
 
 
+
 int main()
 {
     auto multi_process_times = RunMultiProcess();
@@ -25,6 +26,7 @@ int main()
 
     Summary(multi_thread_times, multi_process_times);
 
+    // wait for input from user.
     int a = 0;
     std::cin >> a;
 }
@@ -37,25 +39,25 @@ ProcessingTimes RunMultiThread()
 
     std::vector<utilities::TimeMeasur::TimeProcess> times_process;
 
-    int max_num_worker = 9;
-    for (int i = 1; i <= max_num_worker; i++) {
+    int max_num_workers = 9;
+    for (int i = 1; i <= max_num_workers; i++) {
 
         timer.Start();
 
-        int worker_num = i;
-        img_process::MTImagesProcessor img_processor{ worker_num };
+        int workers_count = i;
+        img_process::MTImagesProcessor img_processor{ workers_count };
 
-        int image_count = 10;
-        img_process::Folders folders;
-        folders.input_folder_name_ = "data";
+        int images_count = 10;
 
         boost::filesystem::create_directory("output_app");
-
+        
+        img_process::Folders folders;
+        folders.input_folder_name_ = "data";
         folders.output_folder_name_ = "output_app/output" +
-                                        std::to_string(worker_num) +
+                                        std::to_string(workers_count) +
                                         "thread";
 
-        img_processor.ProcessImages(image_count, folders);
+        img_processor.ProcessImages(images_count, folders);
 
         timer.Stop();
 
@@ -75,18 +77,17 @@ ProcessingTimes RunMultiProcess()
 
     std::vector<utilities::TimeMeasur::TimeProcess> times_process;
 
-    // current code not supporting multi process.
     int max_num_worker = 9;
     for (int i = 1; i <= max_num_worker; i++) {
 
         timer.Start();
 
-        int worker_num = i;
-        img_process::MPImagesProcessor img_processor{ worker_num };
+        int workers_count = i;
+        img_process::MPImagesProcessor img_processor{ workers_count };
 
-        int image_count = 10;
+        int images_count = 10;
 
-        img_processor.ProcessImages(image_count);
+        img_processor.ProcessImages(images_count);
 
         timer.Stop();
 
@@ -107,10 +108,10 @@ void Summary(const ProcessingTimes& mt_processing_times,
 
     for (const auto& time : mt_processing_times) {
 
-        int num_worker = std::get<int>(time);
+        int workers_count = std::get<int>(time);
         auto time_mesure = std::get<std::chrono::nanoseconds>(time);
 
-        std::cout << "num of threads " << num_worker
+        std::cout << "num of threads " << workers_count
             << " take " << time_mesure.count() << "[nano sec]" << std::endl;
     }
 
@@ -118,10 +119,10 @@ void Summary(const ProcessingTimes& mt_processing_times,
 
     for (const auto& time : mp_processing_times) {
 
-        int num_worker = std::get<int>(time);
+        int workers_count = std::get<int>(time);
         auto time_mesure = std::get<std::chrono::nanoseconds>(time);
 
-        std::cout << "num of processes " << num_worker
+        std::cout << "num of processes " << workers_count
             << " take " << time_mesure.count() << "[nano sec]" << std::endl;
     }
 

@@ -33,7 +33,7 @@ namespace img_process {
 
     void MPImagesProcessor::ProcessImages(int num_of_images) const
     {
-        CreateSharedDate(num_of_images);
+        CreateSharedData(num_of_images);
 
         MultiProcessProcessor processor;
 
@@ -42,7 +42,7 @@ namespace img_process {
 
 
 
-    void MPImagesProcessor::CreateSharedDate(int num_of_imgs) const
+    void MPImagesProcessor::CreateSharedData(int num_of_imgs) const
     {
         // --------------- create shared memory for children
         bi::shared_memory_object::remove("VectorMemory");

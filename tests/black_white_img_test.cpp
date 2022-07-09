@@ -7,6 +7,7 @@
 TEST(ConvertBGRtoBWImageTest, basic_test)
 {
     std::string image_path = cv::samples::findFile("starry_night.jpg");
+    
     cv::Mat img = cv::imread(image_path, cv::IMREAD_COLOR);
 
     float b_multiple = 0.299;

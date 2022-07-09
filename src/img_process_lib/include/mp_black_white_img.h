@@ -7,6 +7,7 @@
 
 namespace img_process {
 
+    // multi process img processor.
     class MPBlackWhiteImg : public BlackWhiteImg {
     public:
         MPBlackWhiteImg(const std::string& input_folder_path,

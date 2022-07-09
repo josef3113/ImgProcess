@@ -29,30 +29,32 @@ int main()
 
     boost::filesystem::create_directory("output_app");
 
-    int inx_of_num_img = 0;
-    int inx_of_num_processers = 1;
-    int inx_of_last_save_img_id = 2;
+    int idx_of_num_img = 0;
 
-    int num_processors = (*shared_vec)[inx_of_num_processers];
+    int idx_of_num_processers = 1;
+    
+    int idx_of_last_save_img_id = 2;
+
+    int num_processors = (*shared_vec)[idx_of_num_processers];
 
     std::string output_folder_name = "output_app/output"
                                      + std::to_string(num_processors) 
                                      + "processes";
 
-    int val = -1;
+    int next_img_id = -1;
     {
         bi::scoped_lock<bi::interprocess_mutex> lock(shared_mutexes->img_id_process_mutex);
 
-        val = (*shared_vec)[inx_of_num_img];
+        next_img_id = (*shared_vec)[idx_of_num_img];
 
-        (*shared_vec)[inx_of_num_img]--;
+        (*shared_vec)[idx_of_num_img]--;
     }
 
-    while (val >= 1)
+    while (next_img_id >= 1)
     {
         std::string input_folder = "data";
 
-        std::string img_name = std::to_string(val) + ".JPG";
+        std::string img_name = std::to_string(next_img_id) + ".JPG";
 
         img_process::MPBlackWhiteImg bw_img(input_folder,
                                             output_folder_name,
@@ -65,9 +67,9 @@ int main()
         { // try take another img id.
             bi::scoped_lock<bi::interprocess_mutex> lock(shared_mutexes->img_id_process_mutex);
             
-            val = (*shared_vec)[inx_of_num_img];
+            next_img_id = (*shared_vec)[idx_of_num_img];
             
-            (*shared_vec)[inx_of_num_img]--;
+            (*shared_vec)[idx_of_num_img]--;
         }
     }
     return 0;

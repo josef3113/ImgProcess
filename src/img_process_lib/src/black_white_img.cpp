@@ -21,13 +21,11 @@ namespace img_process {
 
 
     void BlackWhiteImg::Process() {
-        // read imag 
+
         ReadImg(input_folder_path_, img_name_);
 
-        // converct img to black & white.
         img_ = ConvertImgBGRtoBW::Convert(img_, multipliers_);
 
-        // save image
         SaveImg(output_folder_path_);
     }
 
@@ -36,6 +34,7 @@ namespace img_process {
     void BlackWhiteImg::ReadImg(const std::string& folder_name, const std::string& img_name)
     {
         std::string img_path = folder_name + "/" + img_name;
+        
         img_ = cv::imread(img_path, cv::IMREAD_COLOR);
 
         if (img_.empty()) {
@@ -63,6 +62,7 @@ namespace img_process {
     int img_process::BlackWhiteImg::GetLastImgIdSaved()
     {
         int last_saved_id = -1;
+
         {// lock when take the id of img that save.
             std::lock_guard lg(increment_id_mtx_);
             last_saved_id = last_save_img_++;
