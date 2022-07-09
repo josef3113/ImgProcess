@@ -9,9 +9,14 @@ namespace img_process {
     // class the get path and name of image,load the img ,convert to black/white and save the result.
     class BlackWhiteImg {
     public:
-        BlackWhiteImg(const std::string& input_folder_path,
-                      const std::string& output_folder_path,
-                      const std::string& img_name);
+        BlackWhiteImg(std::string input_folder_path,
+            std::string output_folder_path,
+            std::string img_name);
+
+        void Do();
+
+    protected:
+        virtual int GetLastImgIdSaved();
 
     private:
 
@@ -26,5 +31,10 @@ namespace img_process {
         cv::Mat img_;
 
         ConvertImgBGRtoBW::BGRMultipliers multipliers_{ 0.299,0.587,0.114 };
+
+        std::string input_folder_path_;
+        std::string output_folder_path_; 
+        std::string img_name_;
+
     };
 }

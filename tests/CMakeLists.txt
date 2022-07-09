@@ -24,3 +24,8 @@ target_link_libraries(app_test
   img_process_lib)
 
 add_test(app_gtests app_test)
+
+
+########### create sample exe for testing
+add_executable(sample_exe sample_exe.cpp)
+#########################################

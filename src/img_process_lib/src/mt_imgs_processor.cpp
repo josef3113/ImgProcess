@@ -18,6 +18,8 @@ namespace img_process {
 
         num_of_images_ = num_of_images;
 
+        image_id_to_process_ = num_of_images;
+
         MultiThreadProcessor<Folders> processor;
 
         auto mission = [this, folders_path](Folders) { ProcessImage(folders_path); };
@@ -34,9 +36,8 @@ namespace img_process {
 
         {// lock when take img_id to process
             std::lock_guard lg(mtx_);
-            if (image_id_to_process_ < num_of_images_) {
-                current_image_id = image_id_to_process_++;
-            }
+
+            current_image_id = image_id_to_process_--;
         }// unlock
 
         return current_image_id;
@@ -49,8 +50,8 @@ namespace img_process {
         int image_id = GetNextImgIdToProcess();
 
         // run over the imgs process and save them.
-        while ((image_id != -1) && (image_id < num_of_images_)) {
-
+        while(image_id >= 1)
+        {
             // read and process img from input path and img name
             // save the result in output folder.
             BlackWhiteImg img{folders_path.input_folder_name_,

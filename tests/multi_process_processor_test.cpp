@@ -9,7 +9,7 @@ TEST(MultiProcessProcessorTest, basic_test)
 
     int num_process = 2;
 
-    std::string exe_path = "img_process_exe.exe";
+    std::string exe_path = "sample_exe.exe";
 
     EXPECT_NO_THROW(p.Process(num_process, exe_path));
 }

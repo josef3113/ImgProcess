@@ -7,7 +7,7 @@ TEST(MPImagesProcessorTest, basic_test)
 {
     int num_process = 2;
     
-    img_process::MPImagesProcessor  p{ 2 };
+    img_process::MPImagesProcessor  p{ 1 };
 
     std::string exe_path = "img_process_exe.exe";
 
