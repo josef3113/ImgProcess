@@ -4,8 +4,8 @@ add_library(${NAME_LIB}
 "src/time_measure.cpp" 
 "src/convert_img.cpp" 
 "src/black_white_img.cpp"
-"src/images_processor.cpp"
-)
+"src/mt_imgs_processor.cpp"
+"src/mp_imgs_processor.cpp")
 
 
 

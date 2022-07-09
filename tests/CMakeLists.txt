@@ -13,7 +13,9 @@ add_executable(app_test
 time_measure_test.cpp 
 multi_thread_processor_test.cpp 
 black_white_img_test.cpp 
-images_processor_test.cpp)
+mt_imgs_processor_test.cpp
+multi_process_processor_test.cpp
+mp_img_processor_test.cpp)
 
 
 target_link_libraries(app_test
