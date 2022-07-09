@@ -6,7 +6,7 @@
 
 namespace img_process {
 
-    // class the get path and name of image,load the img ,convert to black/white and save the result.
+    // class that gets path and name of image, load the img ,convert to black/white and saves the result.
     class BlackWhiteImg {
     public:
         BlackWhiteImg(const std::string& input_folder_path,

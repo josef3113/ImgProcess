@@ -11,7 +11,7 @@ namespace img_process {
         
         ~MPImagesProcessor();
 
-        void ProcessImages(int num_of_images);
+        void ProcessImages(int num_of_images) const;
 
     private:
         void CreateSharedDate(int num_of_imgs);

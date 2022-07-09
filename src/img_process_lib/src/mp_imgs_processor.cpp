@@ -31,7 +31,7 @@ namespace img_process {
 
 
 
-    void MPImagesProcessor::ProcessImages(int num_of_images) 
+    void MPImagesProcessor::ProcessImages(int num_of_images) const
     {
         CreateSharedDate(num_of_images);
 

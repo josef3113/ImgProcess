@@ -212,15 +212,7 @@ build src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mp_imgs_processor.c
   TARGET_COMPILE_PDB = src\img_process_lib\CMakeFiles\img_process_lib.dir\img_process_lib.pdb
   TARGET_PDB = src\img_process_lib\img_process_lib.pdb
 
-build src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mp_black_white_img.cpp.obj: CXX_COMPILER__img_process_lib_Debug ..\..\..\src\img_process_lib\src\mp_black_white_img.cpp || cmake_object_order_depends_target_img_process_lib_Debug
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
-  INCLUDES = -I..\..\..\src\img_process_lib\include -IC:\boost_1_77_0\boost_1_77_0 -IC:\opencv\build\include
-  OBJECT_DIR = src\img_process_lib\CMakeFiles\img_process_lib.dir
-  OBJECT_FILE_DIR = src\img_process_lib\CMakeFiles\img_process_lib.dir\src
-  TARGET_COMPILE_PDB = src\img_process_lib\CMakeFiles\img_process_lib.dir\img_process_lib.pdb
-  TARGET_PDB = src\img_process_lib\img_process_lib.pdb
-
-build src\img_process_lib\CMakeFiles\img_process_lib.dir\src\shared_data.cpp.obj: CXX_COMPILER__img_process_lib_Debug ..\..\..\src\img_process_lib\src\shared_data.cpp || cmake_object_order_depends_target_img_process_lib_Debug
+build src\img_process_lib\CMakeFiles\img_process_lib.dir\src\multi_process_processor.cpp.obj: CXX_COMPILER__img_process_lib_Debug ..\..\..\src\img_process_lib\src\multi_process_processor.cpp || cmake_object_order_depends_target_img_process_lib_Debug
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
   INCLUDES = -I..\..\..\src\img_process_lib\include -IC:\boost_1_77_0\boost_1_77_0 -IC:\opencv\build\include
   OBJECT_DIR = src\img_process_lib\CMakeFiles\img_process_lib.dir
@@ -236,7 +228,7 @@ build src\img_process_lib\CMakeFiles\img_process_lib.dir\src\shared_data.cpp.obj
 #############################################
 # Link the static library src\img_process_lib\img_process_lib.lib
 
-build src\img_process_lib\img_process_lib.lib: CXX_STATIC_LIBRARY_LINKER__img_process_lib_Debug src\img_process_lib\CMakeFiles\img_process_lib.dir\src\time_measure.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\convert_img.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\black_white_img.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mt_imgs_processor.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mp_imgs_processor.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mp_black_white_img.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\shared_data.cpp.obj
+build src\img_process_lib\img_process_lib.lib: CXX_STATIC_LIBRARY_LINKER__img_process_lib_Debug src\img_process_lib\CMakeFiles\img_process_lib.dir\src\time_measure.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\convert_img.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\black_white_img.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mt_imgs_processor.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\mp_imgs_processor.cpp.obj src\img_process_lib\CMakeFiles\img_process_lib.dir\src\multi_process_processor.cpp.obj
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = src\img_process_lib\CMakeFiles\img_process_lib.dir
@@ -605,42 +597,6 @@ build tests\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build tests\edit_cache: phony tests\CMakeFiles\edit_cache.util
-
-# =============================================================================
-# Object build statements for EXECUTABLE target sample_exe
-
-
-#############################################
-# Order-only phony target for sample_exe
-
-build cmake_object_order_depends_target_sample_exe_Debug: phony || tests\CMakeFiles\sample_exe.dir
-
-build tests\CMakeFiles\sample_exe.dir\sample_exe.cpp.obj: CXX_COMPILER__sample_exe_Debug ..\..\..\tests\sample_exe.cpp || cmake_object_order_depends_target_sample_exe_Debug
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
-  OBJECT_DIR = tests\CMakeFiles\sample_exe.dir
-  OBJECT_FILE_DIR = tests\CMakeFiles\sample_exe.dir
-  TARGET_COMPILE_PDB = tests\CMakeFiles\sample_exe.dir\
-  TARGET_PDB = sample_exe.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target sample_exe
-
-
-#############################################
-# Link the executable sample_exe.exe
-
-build sample_exe.exe: CXX_EXECUTABLE_LINKER__sample_exe_Debug tests\CMakeFiles\sample_exe.dir\sample_exe.cpp.obj
-  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
-  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = tests\CMakeFiles\sample_exe.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = tests\CMakeFiles\sample_exe.dir\
-  TARGET_FILE = sample_exe.exe
-  TARGET_IMPLIB = tests\sample_exe.lib
-  TARGET_PDB = sample_exe.pdb
 
 
 #############################################
@@ -1027,8 +983,6 @@ build img_process_lib: phony src\img_process_lib\img_process_lib.lib
 
 build img_process_lib.lib: phony src\img_process_lib\img_process_lib.lib
 
-build sample_exe: phony sample_exe.exe
-
 # =============================================================================
 # Folder targets.
 
@@ -1093,7 +1047,7 @@ build src\img_process_lib\all: phony src\img_process_lib\img_process_lib.lib
 #############################################
 # Folder: C:/Users/josef/Desktop/greeneye/clone/ImgProcess/out/build/x64-Debug/tests
 
-build tests\all: phony app_test.exe sample_exe.exe _deps\googletest-build\all
+build tests\all: phony app_test.exe _deps\googletest-build\all
 
 # =============================================================================
 # Built-in targets
