@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/josef/Desktop/greeneye/clone/ImgProcess/src
+# Install script for directory: C:/Users/josef/Desktop/עבודה/greeneye/clone/ImgProcess/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/josef/Desktop/greeneye/clone/ImgProcess/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/josef/Desktop/עבודה/greeneye/clone/ImgProcess/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,11 +34,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/josef/Desktop/greeneye/clone/ImgProcess/out/build/x64-Debug/src/img_process_lib/cmake_install.cmake")
+  include("C:/Users/josef/Desktop/עבודה/greeneye/clone/ImgProcess/out/build/x64-Debug/src/img_process_lib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/josef/Desktop/greeneye/clone/ImgProcess/out/build/x64-Debug/src/app/cmake_install.cmake")
+  include("C:/Users/josef/Desktop/עבודה/greeneye/clone/ImgProcess/out/build/x64-Debug/src/app/cmake_install.cmake")
 endif()
 

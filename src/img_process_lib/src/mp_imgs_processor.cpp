@@ -8,25 +8,15 @@ namespace img_process {
 
     MPImagesProcessor::MPImagesProcessor(int num_of_processes)
         :num_of_processes_{ num_of_processes }
-    {
-        //Remove shared memory on construction
-        struct shm_remove
-        {
-            shm_remove() { bi::shared_memory_object::remove("MutexMemory"); }
-            ~shm_remove() { bi::shared_memory_object::remove("MutexMemory"); }
-        } remover;
-    }
+    {}
 
 
 
     MPImagesProcessor::~MPImagesProcessor()
     {
-        //Remove shared memory on destruction
-        struct shm_remove
-        {
-            shm_remove() { bi::shared_memory_object::remove("MutexMemory"); }
-            ~shm_remove() { bi::shared_memory_object::remove("MutexMemory"); }
-        } remover;
+        bi::shared_memory_object::remove("MutexMemory");
+
+        bi::shared_memory_object::remove("VectorMemory");
     }
 
 
@@ -51,22 +41,21 @@ namespace img_process {
                                           "VectorMemory", //segment name
                                           65536);          //segment size in bytes
 
-
         const ShmemAllocator alloc_inst(segment.get_segment_manager());
+
+        SharedVector* shared_vec = segment.construct<SharedVector>("SharedVector") //object name
+                                   (alloc_inst);//first ctor parameter
+
 
         bi::shared_memory_object shm(bi::create_only,
                                      "MutexMemory",
                                      bi::read_write);
 
-
-        SharedVector* shared_vec = segment.construct<SharedVector>("SharedVector") //object name
-                                   (alloc_inst);//first ctor parameter
-
         shm.truncate(1000);
 
         bi::mapped_region region(shm, bi::read_write);
         void* addr = region.get_address();
-        SharedMutexes* mutexes = new (addr) SharedMutexes();
+        //----------------------------
 
         // the first element in vector is number of imgs.
         shared_vec->push_back(num_of_imgs);
