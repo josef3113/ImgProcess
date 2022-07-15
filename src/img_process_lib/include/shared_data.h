@@ -27,4 +27,24 @@ namespace img_process {
         
         boost::interprocess::interprocess_mutex last_save_img_id_mutex;
     };
+
+
+
+    class SharedMemory {
+
+    public:
+        SharedMemory(img_process::SharedMutexes* shared_mutexs,
+                     img_process::SharedVector* shared_vec);
+
+        int GetNumProcesses();
+
+        int GetImgIdToSave();
+
+        int GetNextImgId();
+
+    private:
+        img_process::SharedVector* shared_vec_;
+
+        img_process::SharedMutexes* shared_mutexes_;
+    };
 }

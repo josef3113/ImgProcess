@@ -1,11 +1,11 @@
 # ninja log v5
-1	496	679605373	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	4d67b82fa337d735
-496	10512	679605383	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	562cf1ecdd75dbfb
-10512	10750	679605383	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	12b3bce034d67753
-10523	10869	0	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	5b75570690dddf2a
-10869	11087	679605384	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	bf25455a67b6f82a
-11088	11246	679605384	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	19412abf66d36be3
-11246	11406	679605384	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	d478bf491783315e
-11406	11549	679605384	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	6f6bbd2a12125f37
-11549	11772	679605384	CMakeFiles/googletest-populate-complete	4651266cd5d7c09a
-11549	11772	679605384	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	4651266cd5d7c09a
+1	325	679606540	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	4d67b82fa337d735
+325	8531	679606548	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	562cf1ecdd75dbfb
+8531	8814	679606549	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	12b3bce034d67753
+8536	8944	0	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	5b75570690dddf2a
+8944	9075	679606549	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	bf25455a67b6f82a
+9076	9197	679606549	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	19412abf66d36be3
+9197	9325	679606549	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	d478bf491783315e
+9325	9486	679606549	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	6f6bbd2a12125f37
+9486	9681	679606549	CMakeFiles/googletest-populate-complete	4651266cd5d7c09a
+9486	9681	679606549	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	4651266cd5d7c09a

@@ -46,6 +46,8 @@ namespace img_process {
         SharedVector* shared_vec = segment.construct<SharedVector>("SharedVector") //object name
                                    (alloc_inst);//first ctor parameter
 
+        // ------------ create shared mutexs
+        bi::shared_memory_object::remove("MutexMemory");
 
         bi::shared_memory_object shm(bi::create_only,
                                      "MutexMemory",

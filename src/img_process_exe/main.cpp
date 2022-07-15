@@ -26,29 +26,17 @@ int main()
                             segment.find<img_process::SharedVector>("SharedVector").first;
     // end taking data from shared memory.
 
+    img_process::SharedMemory shared_memory{ shared_mutexes, shared_vec };
 
     boost::filesystem::create_directory("output_app");
 
-    int idx_of_num_img = 0;
-
-    int idx_of_num_processers = 1;
-    
-    int idx_of_last_save_img_id = 2;
-
-    int num_processors = (*shared_vec)[idx_of_num_processers];
+    int num_processors = shared_memory.GetNumProcesses();
 
     std::string output_folder_name = "output_app/output"
                                      + std::to_string(num_processors) 
                                      + "processes";
 
-    int next_img_id = -1;
-    {
-        bi::scoped_lock<bi::interprocess_mutex> lock(shared_mutexes->img_id_process_mutex);
-
-        next_img_id = (*shared_vec)[idx_of_num_img];
-
-        (*shared_vec)[idx_of_num_img]--;
-    }
+    int next_img_id = shared_memory.GetNextImgId();
 
     while (next_img_id >= 1)
     {
@@ -59,18 +47,11 @@ int main()
         img_process::MPBlackWhiteImg bw_img(input_folder,
                                             output_folder_name,
                                             img_name,
-                                            shared_mutexes,
-                                            shared_vec);
+                                            shared_memory);
 
         bw_img.Process();
 
-        { // try take another img id.
-            bi::scoped_lock<bi::interprocess_mutex> lock(shared_mutexes->img_id_process_mutex);
-            
-            next_img_id = (*shared_vec)[idx_of_num_img];
-            
-            (*shared_vec)[idx_of_num_img]--;
-        }
+        next_img_id = shared_memory.GetNextImgId();
     }
     return 0;
 }

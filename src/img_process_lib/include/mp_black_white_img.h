@@ -13,15 +13,12 @@ namespace img_process {
         MPBlackWhiteImg(const std::string& input_folder_path,
                         const std::string& output_folder_path,
                         const std::string& img_name,
-                        img_process::SharedMutexes* shared_mutexs,
-                        img_process::SharedVector* shared_vec);
+                        SharedMemory& shared_memory);
 
     protected:
         virtual int GetLastImgIdSaved() override;
 
     private:
-        img_process::SharedMutexes* shared_mutexs_;
-        
-        img_process::SharedVector* shared_vec_;
+        SharedMemory& shared_memory_;
     };
 }

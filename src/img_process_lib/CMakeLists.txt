@@ -8,7 +8,9 @@ add_library(${NAME_LIB}
 "src/mp_imgs_processor.cpp" 
 "src/mp_black_white_img.cpp" 
 "src/mp_imgs_processor.cpp" 
-"src/multi_process_processor.cpp")
+"src/multi_process_processor.cpp"
+"src/shared_data.cpp")
+
 
 
 
